@@ -1,0 +1,6 @@
+<component name="home_scene" extends="Scene" >
+    <script type="text/brightscript" uri="home_scene.brs" />
+    <children>
+        <Label id="title" translation="[75,75]" color="0xFFFF23" font="font:MediumBoldSystemFont"/>
+    </children>
+</component>
