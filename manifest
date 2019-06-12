@@ -9,4 +9,4 @@ splash_screen_fhd=pkg:/images/splash_fhd.jpg
 splash_screen_hd=pkg:/images/splash_hd.png
 splash_color=#121212
 
-ui_resolutions=fhd
+ui_resolutions=fhd,hd
