@@ -4,5 +4,4 @@
         <field id="url" type="string" />
         <field id="component_data" type="node" />
     </interface>
-
 </component>
