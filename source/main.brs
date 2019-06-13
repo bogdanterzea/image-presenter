@@ -1,10 +1,13 @@
 sub main()
-	m.port = CreateObject("roMessagePort")
-	screen = CreateObject("roSGScreen")
-	screen.setMessagePort(m.port)
-	scene = screen.CreateScene("home_scene")
-	screen.Show()
+	m.port = CreateObject("roMessagPort")
+	m.screen = CreateObject("roSGScreen")
+	m.screen.setMessagePort(m.port)
+	scene = m.screen.CreateScene("home_scene")
+	m.screen.Show()
+	keepAppAlive()
+end sub
 
+sub keepAppAlive()
 	while(true)
 		msg = wait(0, m.port)
 		msgType = type(msg)
