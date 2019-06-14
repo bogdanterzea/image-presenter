@@ -1,7 +1,6 @@
 <component name="get_component_data_task" extends="Task" >
     <script type="text/brightscript" uri="get_component_data_task.brs" />
     <interface>
-        <field id="url" type="string" />
         <field id="component_data" type="node" />
     </interface>
 </component>

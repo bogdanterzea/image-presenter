@@ -3,37 +3,20 @@ sub init()
 end sub
 
 sub execute()
-    response = ParseJSON(transferData())
-    createData(response)
+    response = sendRequest("http://my-json-server.typicode.com/cazacutudor/typicode-json-server/photos")
+
+    m.top.component_data = createContentNode(response)
 end sub
 
-function transferData() as String
-    requestTransfer()
-    rawResponse = m.request.getToString()
+function sendRequest(url as String) as Object
+    roUrlTransfer = CreateObject("roUrlTransfer")
+    roUrlTransfer.setUrl(url)
 
-    return rawResponse
+    return ParseJson(roUrlTransfer.getToString())
 end function
 
-sub requestTransfer()
-    m.request = CreateObject("roUrlTransfer")
-    m.request.setCertificatesFile("common:/certs/ca-bundle.crt")
-    m.request.SetUrl(m.top.url)
-end sub
+function createContentNode(response as Object) as Object
+    contentNode = CreateObject("roSGNode", "ContentNode")
 
-sub createData(response as Object)
-    m.content = CreateObject("roSGNode", "ContentNode")
-    populateData(response)
-
-    m.top.component_data = m.content
-end sub
-
-function populateData (response as Object) as Object
-    for each item in response
-        child_item = CreateObject("roSGNode", "ContentNode")
-        child_item.id = item.id
-        child_item.description = item.description
-        child_item.url = item.url
-
-        m.content.appendChild(child_item)
-    end for
+    return contentNode
 end function
