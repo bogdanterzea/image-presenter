@@ -1,7 +1,4 @@
 function init()
-    m.title = m.top.findNode("title")
-    m.title.text = "HELLO!"
-
     runGetComponentDataTask()
 end function
 
