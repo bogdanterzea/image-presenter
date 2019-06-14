@@ -9,6 +9,6 @@ sub runGetComponentDataTask()
     m.getComponentDataTask.control = "RUN"
 end sub
 
-sub onContentDataChange(component_data)
-    ? component_data
+sub onContentDataChange(event as Object)
+    ? event.getData()
 end sub
