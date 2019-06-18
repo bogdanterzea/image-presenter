@@ -1,5 +1,6 @@
 sub init()
     m.top.functionName = "execute"
+    m.home_scene = m.top.findNode("home_scene")
 end sub
 
 sub execute()
@@ -12,7 +13,7 @@ function sendRequest(url as String) as Object
     roUrlTransfer = CreateObject("roUrlTransfer")
     roUrlTransfer.setUrl(url)
 
-    return ParseJson(roUrlTransfer.getToString())
+    return roUrlTransfer.getToString()
 end function
 
 function createContentNode(response as Object) as Object
