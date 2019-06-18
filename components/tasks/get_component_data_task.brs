@@ -1,6 +1,5 @@
 sub init()
     m.top.functionName = "execute"
-    m.home_scene = m.top.findNode("home_scene")
 end sub
 
 sub execute()
