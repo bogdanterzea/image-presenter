@@ -1,4 +1,6 @@
 function init()
+    m.content_list = m.top.findNode("content_list")
+    m.content_list.visible = true
     runGetComponentDataTask()
 end function
 

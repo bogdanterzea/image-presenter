@@ -1,3 +1,6 @@
 <component name="home_scene" extends="Scene" >
     <script type="text/brightscript" uri="home_scene.brs" />
+    <children>
+        <rowList id="content_list" translation="[100,170]" itemSpacing="[110,110]"  />
+    </children>
 </component>
