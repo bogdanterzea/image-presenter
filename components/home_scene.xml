@@ -1,6 +1,6 @@
-<component name="home_scene" extends="Scene" >
+<component name="home_scene" extends="Scene" initialFocus="exampleRowList" >
     <script type="text/brightscript" uri="home_scene.brs" />
     <children>
-        <rowList id="content_list" translation="[100,170]" itemSpacing="[110,110]"  />
-    </children>
+    <RowList id = "exampleRowList" translation = "[ 130, 160 ]" itemComponentName = "RowListItem" numRows = "4" itemSize = "[ 1608, 308 ]" rowItemSize = "[ [536, 308] ]" itemSpacing = "[ 0, 40 ]" showRowLabel = "[ true ]" drawFocusFeedback = "false" vertFocusAnimationStyle = "fixedFocusWrap" rowFocusAnimationStyle = "fixedFocusWrap" />
+  </children>
 </component>
