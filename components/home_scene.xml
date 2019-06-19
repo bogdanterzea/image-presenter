@@ -1,6 +1,8 @@
 <component name="home_scene" extends="Scene" >
     <script type="text/brightscript" uri="home_scene.brs" />
     <children>
+        <Label id="title_label" height="20" width="940" translation="[140,50]" />
+        <Label id="description_label" height="20" width="940" translation="[120,90]" />
         <RowList id="content_list"
             translation="[230,160]"
             itemSize="[900,200]"
