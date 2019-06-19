@@ -7,6 +7,8 @@
             translation="[230,160]"
             itemSize="[900,200]"
             rowItemSize="[ [140, 100] ]"
+            rowItemSpacing="[ [10 , 10] ]"
+            focusFootprintBlendColor="0xF34859"
             itemSpacing="[0,20]"
             numRows="2"
             showRowLabel="[true]" />
