@@ -1,9 +1,12 @@
-<component name="home_scene" extends="Scene" initialFocus="exampleRowList" >
+<component name="home_scene" extends="Scene" >
     <script type="text/brightscript" uri="home_scene.brs" />
-    <interface>
-        <field id="feed_data" type="array" />
-    </interface>
     <children>
-        <RowList id = "content_list" translation = "[ 130, 160 ]" itemComponentName = "RowListItem" numRows = "4" itemSize = "[ 1608, 308 ]" rowItemSize = "[ [536, 308] ]" itemSpacing = "[ 0, 40 ]" showRowLabel = "[ true ]" drawFocusFeedback = "false" vertFocusAnimationStyle = "fixedFocusWrap" rowFocusAnimationStyle = "fixedFocusWrap" />
+        <RowList id="content_list"
+            translation="[230,160]"
+            itemSize="[900,200]"
+            rowItemSize="[ [140, 100] ]"
+            itemSpacing="[0,20]"
+            numRows="2"
+            showRowLabel="[true]" />
     </children>
 </component>
