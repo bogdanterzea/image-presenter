@@ -19,9 +19,6 @@ function createContentNode(response as Object) as Object
     contentPhoto = CreateObject("roSGNode", "ContentNode")
     contentPhoto.title = "PHOTOS"
 
-    contentVideo = CreateObject("roSGNode", "ContentNode")
-    contentVideo.title = "VIDEOS"
-
     for each item in response
         contentPhotoChild = CreateObject("roSGNode", "contentNode")
         contentPhotoChild.FHDGRIDPOSTERURL = item.url
@@ -31,7 +28,6 @@ function createContentNode(response as Object) as Object
     end for
 
     contentNode.appendChild(contentPhoto)
-    contentNode.appendChild(contentVideo)
 
     return contentNode
 end function

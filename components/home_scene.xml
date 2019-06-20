@@ -4,13 +4,14 @@
         <Label id="title_label" height="20" width="940" translation="[140,50]" />
         <Label id="description_label" height="20" width="940" translation="[120,90]" />
         <RowList id="content_list"
-            translation="[230,160]"
+            translation="[150,160]"
             itemSize="[900,200]"
-            rowItemSize="[ [140, 100] ]"
-            rowItemSpacing="[ [10 , 10] ]"
-            focusFootprintBlendColor="0xF34859"
+            rowItemSize="[ [190, 160] ]"
+            rowItemSpacing="[ [14 , 20] ]"
+            focusFootprintBlendColor="0x134259"
             itemSpacing="[0,20]"
-            numRows="2"
+            rowLabelOffset="[[0,15]]"
+            numRows="1"
             showRowLabel="[true]" />
     </children>
 </component>
