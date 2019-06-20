@@ -1,11 +1,21 @@
 <component name="home_scene" extends="Scene" >
     <script type="text/brightscript" uri="home_scene.brs" />
     <children>
-        <Label id="title_label" height="20" width="940" translation="[140,50]" />
-        <Label id="description_label" height="20" width="940" translation="[120,90]" />
+        <Label id="title_label"
+            height="60"
+            width="440"
+            translation="[470,50]"
+            color="0x33adFF"
+            font="font:LargeBoldSystemFont" />
+        <Label id="description_label"
+            translation="[150,130]"
+            color="0xff7733"
+            height="1000"
+            width="900"
+            wrap="true"/>
         <RowList id="content_list"
-            translation="[150,160]"
-            itemSize="[900,200]"
+            translation="[150,360]"
+            itemSize="[900,300]"
             rowItemSize="[ [190, 160] ]"
             rowItemSpacing="[ [14 , 20] ]"
             focusFootprintBlendColor="0x134259"
