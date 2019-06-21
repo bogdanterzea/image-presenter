@@ -1,10 +1,12 @@
 function init()
+    m.top.backgroundURI = "pkg:/images/hexagones.jpg"
     m.content_list = m.top.findNode("content_list")
     m.title_label = m.top.findNode("title_label")
     m.description_label = m.top.findNode("description_label")
-    runGetComponentDataTask()
     m.content_list.SetFocus(true)
     m.content_list.observeField("rowItemFocused", "onItemFocused")
+
+    runGetComponentDataTask()
 end function
 
 sub runGetComponentDataTask()

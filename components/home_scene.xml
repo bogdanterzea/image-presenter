@@ -1,28 +1,27 @@
 <component name="home_scene" extends="Scene" >
     <script type="text/brightscript" uri="home_scene.brs" />
     <children>
-        <Label id="title_label"
+        <label id="title_label"
             height="60"
             width="440"
             translation="[470,50]"
             color="0x33adFF"
             font="font:LargeBoldSystemFont" />
-        <Label id="description_label"
+        <label id="description_label"
             translation="[150,130]"
-            color="0xff7733"
+            color="0x33adFF"
             height="1000"
             width="900"
             wrap="true"/>
-        <RowList id="content_list"
+        <rowList id="content_list"
             itemComponentName="row_item"
+            focusBitmapUri="pkg:/images/Border1.9.png"
             translation="[150,360]"
             itemSize="[1020,300]"
-            rowItemSize="[ [190, 160] ]"
-            rowItemSpacing="[ [14 , 20] ]"
-            focusFootprintBlendColor="0x134259"
+            rowItemSize="[ [250, 150] ]"
+            rowItemSpacing="[ [5, 0] ]"
             itemSpacing="[0,20]"
             rowLabelOffset="[[0,15]]"
-            numRows="1"
             showRowLabel="[true]" />
     </children>
 </component>
