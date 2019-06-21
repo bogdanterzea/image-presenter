@@ -16,7 +16,7 @@
         <RowList id="content_list"
             itemComponentName="row_item"
             translation="[150,360]"
-            itemSize="[900,300]"
+            itemSize="[1020,300]"
             rowItemSize="[ [190, 160] ]"
             rowItemSpacing="[ [14 , 20] ]"
             focusFootprintBlendColor="0x134259"
