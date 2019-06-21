@@ -1,9 +1,10 @@
 <component name="row_item" extends="group" >
     <interface>
-        <field id="itemContent" type="node" onChange="showId" />
+        <field id="itemContent" type="node" onChange="itemContentChanged" />
     </interface>
       <script type="text/brightscript" uri="row_item.brs" />
     <children>
+        <Poster id="poster" translation="[0,0]" width="190" height="160" />
         <Label id="title" width="90" translation="[9,0]" lineSpacing="0" maxLines="2" />
     </children>
 </component>

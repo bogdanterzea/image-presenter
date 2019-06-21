@@ -21,6 +21,7 @@ function createContentNode(response as Object) as Object
 
     for each item in response
         contentPhotoChild = CreateObject("roSGNode", "contentNode")
+        contentPhotoChild.id = item.id
         contentPhotoChild.FHDGRIDPOSTERURL = item.url
         contentPhotoChild.title = item.title
         contentPhotoChild.description = item.description

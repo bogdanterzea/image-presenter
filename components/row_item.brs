@@ -1,8 +1,10 @@
 sub init()
     m.title = m.top.findNode("title")
-    m.itemContent = m.top.findNode("itemContent")
+    m.poster = m.top.findNode("poster")
 end sub
 
-sub showId()
-    m.title.text = m.itemContent.title
+sub itemContentChanged(event as Object)
+    itemData = event.getData()
+    m.title.text = itemData.id
+    m.poster.uri = itemData.FHDGRIDPOSTERURL
 end sub
