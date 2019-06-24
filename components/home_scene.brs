@@ -3,7 +3,7 @@ function init()
     m.content_list = m.top.findNode("content_list")
     m.title_label = m.top.findNode("title_label")
     m.description_label = m.top.findNode("description_label")
-    m.content_list.SetFocus(true)
+    m.content_list.setFocus(true)
     m.content_list.observeField("rowItemFocused", "onItemFocused")
 
     runGetComponentDataTask()
@@ -16,20 +16,18 @@ sub runGetComponentDataTask()
 end sub
 
 sub onContentDataChange(event as Object)
-    component_data = event.getData()
-    m.content_list.content = component_data
+    m.content_list.content = event.getData()
 end sub
 
-sub onItemFocused(element)
+sub onItemFocused(element as Object)
     selected_item = element.getData()
-    m.title_label.text = getTitleFromIndex(selected_item[0] , selected_item[1])
-    m.description_label.text = getDescriptionFromIndex(selected_item[0] , selected_item[1])
+    m.title_label.text = getDataFromIndex(selected_item).title
+    m.description_label.text = getDataFromIndex(selected_item).description
 end sub
 
-function getTitleFromIndex(item1 as integer , item2 as integer) as Object
-    return m.content_list.content.getChild(item1).getChild(item2).title
-end function
+function getDataFromIndex(data as Object) as Object
+    row = data[0]
+    line = data[1]
 
-function getDescriptionFromIndex(item1 as integer , item2 as integer) as Object
-    return m.content_list.content.getChild(item1).getChild(item2).description
+    return m.content_list.content.getChild(row).getChild(line)
 end function

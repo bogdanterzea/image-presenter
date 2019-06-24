@@ -1,4 +1,4 @@
-<component name="home_scene" extends="Scene" >
+<component name="home_scene" extends="Scene">
     <script type="text/brightscript" uri="home_scene.brs" />
     <children>
         <label id="title_label"

@@ -5,8 +5,8 @@
       <script type="text/brightscript" uri="row_item.brs" />
     <children>
         <poster id="poster" translation="[0,0]" width="250" height="150" />
-        <rectangle id="idGround" translation="[5,5]" color="0x000000" width="50" height="35"  >
-            <label id="itemId" width="50" height="35" horizAlign="center" vertAlign="center" color="0xFFFFFF" />
+        <rectangle id="id_ground" translation="[5,5]" color="0x000000" width="50" height="35"  >
+            <label id="item_id" width="50" height="35" horizAlign="center" vertAlign="center" color="0xFFFFFF" />
         </rectangle>
     </children>
 </component>
