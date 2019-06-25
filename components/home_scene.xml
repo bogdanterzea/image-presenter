@@ -14,6 +14,7 @@
             width="900"
             wrap="true"/>
         <rowList id="content_list"
+            visible="true"
             itemComponentName="row_item"
             focusBitmapUri="pkg:/images/Border1.9.png"
             translation="[150,360]"
