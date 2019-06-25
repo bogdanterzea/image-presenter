@@ -5,6 +5,6 @@ end sub
 
 sub itemContentChanged(event as Object)
     itemData = event.getData()
-    m.item_id.text = itemData.id
-    m.poster.uri = itemData.FHDGRIDPOSTERURL
+    m.item_id.text = itemData.index
+    m.poster.uri = itemData.poster_url
 end sub

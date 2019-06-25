@@ -1,33 +1,36 @@
 function init()
+    m.ROW_INDEX = 0
+    m.ROW_ITEM_INDEX = 1
+
     m.top.backgroundURI = "pkg:/images/hexagones.jpg"
     m.content_list = m.top.findNode("content_list")
     m.title_label = m.top.findNode("title_label")
     m.description_label = m.top.findNode("description_label")
     m.content_list.setFocus(true)
-    m.content_list.observeField("rowItemFocused", "onItemFocused")
+    m.content_list.observeField("rowItemFocused", "onRowItemFocused")
 
     runGetComponentDataTask()
 end function
 
 sub runGetComponentDataTask()
     getComponentDataTask = CreateObject("roSGNode", "get_component_data_task")
-    getComponentDataTask.observeField("component_data", "onContentDataChange")
+    getComponentDataTask.observeField("component_data", "onContentDataChanged")
     getComponentDataTask.control = "RUN"
 end sub
 
-sub onContentDataChange(event as Object)
+sub onContentDataChanged(event as Object)
     m.content_list.content = event.getData()
 end sub
 
-sub onItemFocused(element as Object)
-    selected_item = element.getData()
-    m.title_label.text = getDataFromIndex(selected_item).title
-    m.description_label.text = getDataFromIndex(selected_item).description
+sub onRowItemFocused(event as Object)
+    rowItemData = getFocusedRowItemData(event.getData())
+    m.title_label.text = rowItemData.title
+    m.description_label.text = rowItemData.description
 end sub
 
-function getDataFromIndex(data as Object) as Object
-    row = data[0]
-    line = data[1]
+function getFocusedRowItemData(rowItemFocused as Object) as Object
+    focusedRow = rowItemFocused[m.ROW_INDEX]
+    focusedRowItem = rowItemFocused[m.ROW_ITEM_INDEX]
 
-    return m.content_list.content.getChild(row).getChild(line)
+    return m.content_list.content.getChild(focusedRow).getChild(focusedRowItem)
 end function

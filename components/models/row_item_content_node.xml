@@ -1,0 +1,8 @@
+<component name="row_item_content_node" extends="ContentNode" >
+    <interface>
+        <field id="index" type="int" />
+        <field id="poster_url" type="string" />
+        <field id="title" type="string" />
+        <field id="description" type="string" />
+    </interface>
+</component>
