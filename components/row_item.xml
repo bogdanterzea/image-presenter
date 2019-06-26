@@ -1,12 +1,12 @@
-<component name="row_item" extends="group" >
+<component name="row_item" extends="Group" >
     <interface>
         <field id="itemContent" type="node" onChange="itemContentChanged" />
     </interface>
-      <script type="text/brightscript" uri="row_item.brs" />
+        <script type="text/brightscript" uri="row_item.brs" />
     <children>
-        <poster id="poster" translation="[0,0]" width="250" height="150" />
+        <poster id="poster" width="250" height="150" />
         <rectangle id="id_ground" translation="[5,5]" color="0x000000" width="50" height="35"  >
-            <label id="item_id" width="50" height="35" horizAlign="center" vertAlign="center" color="0xFFFFFF" />
+            <label id="item_index" width="50" height="35" horizAlign="center" vertAlign="center" color="0x809FFF" />
         </rectangle>
     </children>
 </component>
