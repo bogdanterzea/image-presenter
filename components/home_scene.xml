@@ -5,11 +5,11 @@
             height="60"
             width="440"
             translation="[470,50]"
-            color="0x33adFF"
+            color="0x809fff"
             font="font:LargeBoldSystemFont" />
         <label id="description_label"
             translation="[150,130]"
-            color="0x33adFF"
+            color="0x809fff"
             height="1000"
             width="900"
             wrap="true"/>
