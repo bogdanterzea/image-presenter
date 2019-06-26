@@ -16,7 +16,6 @@ sub runGetComponentDataTask()
     getComponentDataTask = CreateObject("roSGNode", "get_component_data_task")
     getComponentDataTask.observeField("component_data", "onContentDataChanged")
     getComponentDataTask.control = "RUN"
-
 end sub
 
 sub onContentDataChanged(event as Object)
