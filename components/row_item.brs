@@ -1,6 +1,12 @@
 sub init()
     m.itemIndex = m.top.findNode("item_index")
     m.poster = m.top.findNode("poster")
+
+    setTheme()
+end sub
+
+sub setTheme()
+    m.itemIndex.color = getAppColors().main
 end sub
 
 sub itemContentChanged(event as Object)

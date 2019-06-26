@@ -9,12 +9,14 @@ function init()
     m.contentList.observeField("rowItemFocused", "onRowItemFocused")
 
     runGetComponentDataTask()
+    setTheme()
 end function
 
 sub runGetComponentDataTask()
     getComponentDataTask = CreateObject("roSGNode", "get_component_data_task")
     getComponentDataTask.observeField("component_data", "onContentDataChanged")
     getComponentDataTask.control = "RUN"
+
 end sub
 
 sub onContentDataChanged(event as Object)
@@ -34,3 +36,9 @@ function getFocusedRowItemData(rowItemFocused as Object) as Object
 
     return m.contentList.content.getChild(focusedRow).getChild(focusedRowItem)
 end function
+
+sub setTheme()
+    colors = getAppColors()
+    m.titleLabel.color = colors.main
+    m.descriptionLabel.color = colors.main
+end sub
