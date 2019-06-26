@@ -1,3 +1,9 @@
-<Component name="detail_screen" extends="Group" >
-
-</Component>
+<component name="detail_screen" extends="Group" >
+    <interface>
+        <field id="item_detail" type="node" alias="detail_screen.itemSelected"/>
+    </interface>
+    <script type="text/brightscript" uri="detail_screen.brs" />
+    <children>
+        <poster id="image" width="1920" height="1080" />
+    </children>
+</component>
