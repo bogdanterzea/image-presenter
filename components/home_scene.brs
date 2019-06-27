@@ -1,6 +1,7 @@
 function init()
     m.ROW_INDEX = 0
     m.ROW_ITEM_INDEX = 1
+    m.top.setFocus(true)
 
     m.top.backgroundURI = "pkg:/images/hexagones.jpg"
     m.contentList = m.top.findNode("content_list")
@@ -20,7 +21,6 @@ end sub
 
 sub onContentDataChanged(event as Object)
     m.contentList.content = event.getData()
-    m.contentList.setFocus(true)
 end sub
 
 sub onRowItemFocused(event as Object)
