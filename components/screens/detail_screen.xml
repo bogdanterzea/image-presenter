@@ -1,9 +1,9 @@
 <component name="detail_screen" extends="Group" >
     <interface>
-        <field id="item_detail" type="node" alias="detail_screen.itemSelected"/>
+        <field id="content" type="node" onChange="onContentChanged" />
     </interface>
     <script type="text/brightscript" uri="detail_screen.brs" />
     <children>
-        <poster id="image" width="1920" height="1080" />
+        <poster id="poster" width="1920" height="1080" />
     </children>
 </component>

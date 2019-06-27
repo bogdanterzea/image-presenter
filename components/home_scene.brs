@@ -6,12 +6,26 @@ function init()
     m.top.backgroundURI = "pkg:/images/hexagones.jpg"
     m.contentList = m.top.findNode("content_list")
     m.titleLabel = m.top.findNode("title_label")
+    m.detailScreen = m.top.findNode("detail_screen")
     m.descriptionLabel = m.top.findNode("description_label")
     m.contentList.observeField("rowItemFocused", "onRowItemFocused")
+    m.contentList.observeField("rowItemSelected", "OnRowItemSelected")
 
     runGetComponentDataTask()
     setTheme()
 end function
+
+sub OnRowItemSelected(event as Object)
+    rowItemData = getFocusedRowItemData(event.getData())
+    detailScreen = CreateObject("roSGNode", "detail_screen")
+    content = detailScreen.findNode("content")
+    content = rowItemData
+    ? content "adsasda"
+    
+    m.titleLabel.visible = "false"
+    m.descriptionLabel.visible = "false"
+    m.contentList.visible = "false"
+end sub
 
 sub runGetComponentDataTask()
     getComponentDataTask = CreateObject("roSGNode", "get_component_data_task")
