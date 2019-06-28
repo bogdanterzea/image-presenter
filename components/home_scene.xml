@@ -1,3 +1,26 @@
-<component name="home_scene" extends="Scene" >
-    <script type="text/brightscript" uri="home_scene.brs" />
+<component name="home_scene" extends="Scene" initialFocus="content_list" >
+    <script type="text/brightscript" uri="home_scene.brs"/>
+    <script type="text/brightscript" uri="AppTheme.brs" />
+    <children>
+        <label id="title_label"
+            height="60"
+            width="440"
+            translation="[470,50]" />
+        <label id="description_label"
+            translation="[150,130]"
+            height="1000"
+            width="900"
+            wrap="true"/>
+        <rowList id="content_list"
+            visible="true"
+            itemComponentName="row_item"
+            focusBitmapUri="pkg:/images/focus_indicator.9.png"
+            translation="[150,360]"
+            itemSize="[1020,300]"
+            rowItemSize="[ [250, 150] ]"
+            rowItemSpacing="[ [5, 0] ]"
+            itemSpacing="[0,20]"
+            rowLabelOffset="[[0,15]]"
+            showRowLabel="[true]" />
+    </children>
 </component>
