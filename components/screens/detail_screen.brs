@@ -1,16 +1,10 @@
 sub init()
     m.poster = m.top.findNode("poster")
-    doIt()
+    m.detailScreen = m.top.findNode("detail_screen")
 end sub
 
-sub onContentChangedd(event as Object)
-    item = obj.getData()
+sub onContentChanged(event as Object)
+    item = event.getData()
     m.poster.uri = item.poster_url
-    ?"AAAAAAAAAAAAAAAAAAAAAAAAAAA"
-end sub
-
-sub doIt()
-    content = m.top.findNode("content")
-    item = content.getData()
-    m.poster.uri = item.poster_url
+    m.poster.visible = true
 end sub

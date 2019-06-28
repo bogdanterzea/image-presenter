@@ -16,15 +16,14 @@ function init()
 end function
 
 sub OnRowItemSelected(event as Object)
+    m.titleLabel.visible = false
+    m.descriptionLabel.visible = false
+    m.contentList.visible = false
+
     rowItemData = getFocusedRowItemData(event.getData())
     detailScreen = CreateObject("roSGNode", "detail_screen")
     content = detailScreen.findNode("content")
     content = rowItemData
-    ? content "adsasda"
-    
-    m.titleLabel.visible = "false"
-    m.descriptionLabel.visible = "false"
-    m.contentList.visible = "false"
 end sub
 
 sub runGetComponentDataTask()
