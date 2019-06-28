@@ -5,8 +5,7 @@
         <label id="title_label"
             height="60"
             width="440"
-            translation="[470,50]"
-            font="font:LargeBoldSystemFont" />
+            translation="[470,50]" />
         <label id="description_label"
             translation="[150,130]"
             height="1000"
