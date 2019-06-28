@@ -7,8 +7,9 @@ sub init()
 end sub
 
 sub setTheme()
-    m.itemIndex.color = getAppColors().main
-    m.rectangle.color = getAppColors().third
+    Color = getAppColors()
+    m.itemIndex.color = Color.main
+    m.rectangle.color = Color.third
 end sub
 
 sub itemContentChanged(event as Object)
