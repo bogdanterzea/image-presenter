@@ -8,9 +8,9 @@
 
     <children>
         <poster id="poster" width="1920" height="1080" />
-        <rectangle id="rectangle" translation="[40,70]" width="50" height="35" >
-            <label id="title" translation="[10,20]" />
-            <label id="description" translation="[20,40]" height="1000" width="900" wrap="true" />
+        <rectangle id="rectangle" translation="[40,70]" height="200" width="900" visible="false" >
+            <label id="title" translation="[30,20]" />
+            <label id="description" translation="[30,50]" height="1000" width="900" wrap="true" />
         </rectangle>
     </children>
 </component>

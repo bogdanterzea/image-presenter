@@ -18,7 +18,6 @@ end function
 sub onRowItemSelected(event as Object)
 
     rowItemData = getFocusedRowItemData(event.getData())
-
     m.detailScreen.content = rowItemData
     m.detailScreen.setFocus(true)
 end sub
@@ -44,6 +43,20 @@ function getFocusedRowItemData(rowItemFocused as Object) as Object
     focusedRowItem = rowItemFocused[m.ROW_ITEM_INDEX]
 
     return m.contentList.content.getChild(focusedRow).getChild(focusedRowItem)
+end function
+
+function onKeyEvent(key,press) as Boolean
+    if press then
+        if(key = "back")
+            if m.detailScreen.visible
+                m.detailScreen.visible = false
+                
+                m.contentList.setFocus(true)
+                return true
+            end if
+        end if
+    end if
+    return false
 end function
 
 sub setTheme()
