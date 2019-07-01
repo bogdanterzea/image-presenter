@@ -22,6 +22,6 @@
             itemSpacing="[0,20]"
             rowLabelOffset="[[0,15]]"
             showRowLabel="[true]" />
-        <detail_screen id="detail_screen" />
+        <detail_screen id="detail_screen" visible="false" />
     </children>
 </component>
