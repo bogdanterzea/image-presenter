@@ -1,10 +1,19 @@
 sub init()
     m.poster = m.top.findNode("poster")
-    m.detailScreen = m.top.findNode("detail_screen")
+    m.title = m.top.findNode("title")
+    m.description = m.top.findNode("description")
 end sub
 
 sub onContentChanged(event as Object)
-    item = event.getData()
-    m.poster.uri = item.poster_url
-    m.poster.visible = true
+    content = event.getData()
+    m.poster.uri = content.poster_url
+    m.title.text = content.title
+    m.description.text = content.description
+    setTheme()
+end sub
+
+sub setTheme()
+    colors = getAppColors()
+    m.title.color = colors.main
+    m.description.color = colors.second
 end sub

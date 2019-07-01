@@ -9,21 +9,18 @@ function init()
     m.detailScreen = m.top.findNode("detail_screen")
     m.descriptionLabel = m.top.findNode("description_label")
     m.contentList.observeField("rowItemFocused", "onRowItemFocused")
-    m.contentList.observeField("rowItemSelected", "OnRowItemSelected")
+    m.contentList.observeField("rowItemSelected", "onRowItemSelected")
 
     runGetComponentDataTask()
     setTheme()
 end function
 
-sub OnRowItemSelected(event as Object)
-    m.titleLabel.visible = false
-    m.descriptionLabel.visible = false
-    m.contentList.visible = false
+sub onRowItemSelected(event as Object)
 
     rowItemData = getFocusedRowItemData(event.getData())
-    detailScreen = CreateObject("roSGNode", "detail_screen")
-    content = detailScreen.findNode("content")
-    content = rowItemData
+
+    m.detailScreen.content = rowItemData
+    m.detailScreen.setFocus(true)
 end sub
 
 sub runGetComponentDataTask()
