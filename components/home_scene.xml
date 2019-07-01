@@ -1,8 +1,6 @@
 <component name="home_scene" extends="Scene" initialFocus="content_list" >
-
     <script type="text/brightscript" uri="home_scene.brs"/>
     <script type="text/brightscript" uri="AppTheme.brs" />
-    
     <children>
         <label id="title_label"
             height="60"
