@@ -45,20 +45,22 @@ function getFocusedRowItemData(rowItemFocused as Object) as Object
     return m.contentList.content.getChild(focusedRow).getChild(focusedRowItem)
 end function
 
-function onKeyEvent(key,press) as Boolean
+function onKeyEvent(key, press) as Boolean
     if press then
-        if(key = "back")
+        if key = "back"
             if m.detailScreen.visible
-                m.detailScreen.visible = false
-                m.contentList.setFocus(true)
-
+                focusDetailScreen()
                 return true
             end if
         end if
     end if
-    
     return false
 end function
+
+sub focusDetailScreen()
+    m.detailScreen.visible = false
+    m.contentList.setFocus(true)
+end sub
 
 sub setTheme()
     colors = getAppColors()
