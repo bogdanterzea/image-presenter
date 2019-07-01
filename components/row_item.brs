@@ -9,7 +9,7 @@ end sub
 sub setTheme()
     colors = getAppColors()
     m.itemIndex.color = colors.main
-    m.rectangle.color = colors.rectangleSecond
+    m.rectangle.color = colors.fourth
 end sub
 
 sub itemContentChanged(event as Object)

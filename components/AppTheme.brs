@@ -2,7 +2,7 @@ function getAppColors() as Object
     return {
         main: "0x809FFF",
         second: "0xFFFFFF"
-        rectangleMain: "9x000000"
-        rectangleSecond: "0x000000"
+        third: "100x000000"
+        fourth: "200x000000"
     }
 end function
