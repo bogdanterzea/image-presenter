@@ -11,6 +11,7 @@ sub onContentChanged(event as Object)
     m.title.text = content.title
     m.description.text = content.description
     m.rectangle.visible = true
+    
     setTheme()
 end sub
 

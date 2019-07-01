@@ -16,9 +16,9 @@ function init()
 end function
 
 sub onRowItemSelected(event as Object)
-
     rowItemData = getFocusedRowItemData(event.getData())
     m.detailScreen.content = rowItemData
+    m.detailScreen.visible = true
     m.detailScreen.setFocus(true)
 end sub
 
@@ -50,12 +50,13 @@ function onKeyEvent(key,press) as Boolean
         if(key = "back")
             if m.detailScreen.visible
                 m.detailScreen.visible = false
-                
                 m.contentList.setFocus(true)
+
                 return true
             end if
         end if
     end if
+    
     return false
 end function
 
