@@ -1,9 +1,9 @@
-<component name="detail_screen" extends="Group" >
+<component name="detailScreen" extends="Group" >
     <interface>
         <field id="content" type="node" onChange="onContentChanged" />
     </interface>
 
-    <script type="text/brightscript" uri="detail_screen.brs" />
+    <script type="text/brightscript" uri="detailScreen.brs" />
     <script type="text/brightscript" uri="pkg:/components/AppTheme.brs" />
 
     <children>
