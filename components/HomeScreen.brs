@@ -6,7 +6,7 @@ sub init()
     m.contentList = m.top.findNode("content_list")
     m.contentList.observeField("rowItemFocused", "onRowItemFocused")
     m.contentList.observeField("rowItemSelected", "onRowItemSelected")
-    m.detailScreen = m.top.findNode("detail_screen")
+    m.detailScreen = m.top.findNode("DetailScreen")
 
     runGetComponentDataTask()
     setTheme()
