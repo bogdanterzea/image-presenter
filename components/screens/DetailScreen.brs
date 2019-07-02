@@ -4,6 +4,8 @@ sub init()
     m.description = m.top.findNode("description")
     m.rectangle = m.top.findNode("rectangle")
 
+    m.description.text = "asdasdsajdnado ai saoid miwa diam iam dwaoi nain wain as asdasdsajdnado"
+
     setTheme()
 end sub
 
