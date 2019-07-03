@@ -1,4 +1,4 @@
-<component name="detailScreen" extends="Group" >
+<component name="DetailScreen" extends="Group" >
     <interface>
         <field id="content" type="node" onChange="onContentChanged" />
     </interface>

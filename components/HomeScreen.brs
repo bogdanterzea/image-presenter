@@ -6,7 +6,6 @@ sub init()
     m.contentList = m.top.findNode("content_list")
     m.contentList.observeField("rowItemFocused", "onRowItemFocused")
     m.contentList.observeField("rowItemSelected", "onRowItemSelected")
-''    m.detailScreen = m.top.findNode("DetailScreen")
 
     runGetComponentDataTask()
     setTheme()
@@ -20,10 +19,7 @@ end sub
 
 sub onRowItemSelected(event as Object)
     rowItemData = getFocusedRowItemData(event.getData())
-    m.NavigationService.navigate(m.top, "DetailScreen", {content: rowItemData})
-    'm.detailScreen.content = rowItemData
-    'm.detailScreen.visible = true
-    'm.detailScreen.setFocus(true)
+    navigate(m.top, "DetailScreen", rowItemData)
 end sub
 
 sub onRowItemFocused(event as Object)
@@ -42,23 +38,6 @@ function getFocusedRowItemData(rowItemFocused as Object) as Object
 
     return m.contentList.content.getChild(focusedRow).getChild(focusedRowItem)
 end function
-
-'function onKeyEvent(key, press) as Boolean
-''    if press then
-''        if key = "back"
-''            if m.detailScreen.visible
-''                focusDetailScreen()
-''                return true
-''            end if
-''        end if
-''    end if
-''    return false
-'end function
-
-'sub focusDetailScreen()
-''    m.detailScreen.visible = false
-''    m.contentList.setFocus(true)
-'end sub
 
 sub setTheme()
     colors = getAppColors()

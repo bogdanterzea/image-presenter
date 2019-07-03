@@ -1,7 +1,7 @@
 <component name="HomeScreen" extends="Group" initialFocus="content_list" >
     <script type="text/brightscript" uri="HomeScreen.brs" />
     <script type="text/brightscript" uri="AppTheme.brs" />
-    <script type="text/brightscript" uri="NavigationService.brs" />
+    <script type="text/brightscript" uri="pkg:/components/services/NavigateFunctions.brs" />
     <children>
         <label id="title_label"
             height="60"
@@ -11,7 +11,7 @@
             translation="[150,130]"
             height="1000"
             width="900"
-            wrap="true"/>
+            wrap="true" />
         <rowList id="content_list"
             visible="true"
             itemComponentName="RowItem"
@@ -23,4 +23,5 @@
             itemSpacing="[0,20]"
             rowLabelOffset="[[0,15]]"
             showRowLabel="[true]" />
+    </children>
 </component>
