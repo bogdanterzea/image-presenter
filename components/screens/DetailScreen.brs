@@ -4,8 +4,6 @@ sub init()
     m.description = m.top.findNode("description")
     m.rectangle = m.top.findNode("rectangle")
 
-    m.description.text = "asdasdsajdnado ai saoid miwa diam iam dwaoi nain wain as asdasdsajdnado"
-
     setTheme()
 end sub
 
@@ -22,3 +20,13 @@ sub setTheme()
     m.description.color = colors.main
     m.rectangle.color = colors.third
 end sub
+
+function onKeyEvent(key, press) as Boolean
+    if press then
+        if key = "back" then
+            navigateBack("content_list")
+            return true
+        end if
+    end if
+    return false
+end function

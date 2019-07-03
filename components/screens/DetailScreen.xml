@@ -5,6 +5,7 @@
 
     <script type="text/brightscript" uri="detailScreen.brs" />
     <script type="text/brightscript" uri="pkg:/components/AppTheme.brs" />
+    <script type="text/brightscript" uri="pkg:/components/services/NavigateFunctions.brs" />
 
     <children>
         <poster id="poster" width="1280" height="720" />
