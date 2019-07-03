@@ -6,7 +6,7 @@ sub init()
     m.contentList = m.top.findNode("content_list")
     m.contentList.observeField("rowItemFocused", "onRowItemFocused")
     m.contentList.observeField("rowItemSelected", "onRowItemSelected")
-    
+
     runGetComponentDataTask()
     setTheme()
 end sub
@@ -18,12 +18,12 @@ sub runGetComponentDataTask()
 end sub
 
 sub onRowItemSelected(event as Object)
-    rowItemData = getFocusedRowItemData(event.getData())
-    navigate(m.top, "DetailScreen", rowItemData)
+    rowItemData = getRowItemData(event.getData())
+    navigate("DetailScreen", rowItemData)
 end sub
 
 sub onRowItemFocused(event as Object)
-    rowItemData = getFocusedRowItemData(event.getData())
+    rowItemData = getRowItemData(event.getData())
     m.titleLabel.text = rowItemData.title
     m.descriptionLabel.text = rowItemData.description
 end sub
@@ -32,7 +32,7 @@ sub onContentDataChanged(event as Object)
     m.contentList.content = event.getData()
 end sub
 
-function getFocusedRowItemData(rowItemFocused as Object) as Object
+function getRowItemData(rowItemFocused as Object) as Object
     focusedRow = rowItemFocused[m.ROW_INDEX]
     focusedRowItem = rowItemFocused[m.ROW_ITEM_INDEX]
 

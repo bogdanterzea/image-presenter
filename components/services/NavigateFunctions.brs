@@ -1,13 +1,13 @@
-sub navigate(currentScreen as Object, ComponentToFocus as String, content as Object)
-    component = CreateObject("roSGNode", ComponentToFocus)
+sub navigate(componentName as String, content as Object)
+    component = CreateObject("roSGNode", componentName)
     component.content = content
-    currentScreen.appendChild(component)
+    m.top.appendChild(component)
     component.setFocus(true)
 end sub
 
-sub navigateBack(elementToFocus as String)
+sub navigateBackTo(locationToFocus as String)
     parent = m.top.getParent()
-    m.top.visible = false
-    childrenToFocus = parent.findNode(elementToFocus)
-    childrenToFocus.setFocus(true)
+    parent.removeChild(m.top)
+    node = parent.findNode(locationToFocus)
+    node.setFocus(true)
 end sub

@@ -3,7 +3,7 @@
         <field id="content" type="node" onChange="onContentChanged" />
     </interface>
 
-    <script type="text/brightscript" uri="detailScreen.brs" />
+    <script type="text/brightscript" uri="DetailScreen.brs" />
     <script type="text/brightscript" uri="pkg:/components/AppTheme.brs" />
     <script type="text/brightscript" uri="pkg:/components/services/NavigateFunctions.brs" />
 

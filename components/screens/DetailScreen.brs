@@ -18,13 +18,13 @@ sub setTheme()
     colors = getAppColors()
     m.title.color = colors.main
     m.description.color = colors.main
-    m.rectangle.color = colors.third
+    m.rectangle.color = colors.transparentBlack
 end sub
 
 function onKeyEvent(key, press) as Boolean
     if press then
         if key = "back" then
-            navigateBack("content_list")
+            navigateBackTo("content_list")
             return true
         end if
     end if
