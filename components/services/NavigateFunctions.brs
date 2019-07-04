@@ -5,9 +5,9 @@ sub navigate(componentName as String, content as Object)
     component.setFocus(true)
 end sub
 
-sub navigateBackTo(locationToFocus as String)
+sub navigateBackTo(nodeId as String)
     parent = m.top.getParent()
     parent.removeChild(m.top)
-    node = parent.findNode(locationToFocus)
+    node = parent.findNode(nodeId)
     node.setFocus(true)
 end sub
