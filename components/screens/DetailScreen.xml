@@ -1,0 +1,17 @@
+<component name="DetailScreen" extends="Group" >
+    <interface>
+        <field id="content" type="node" onChange="onContentChanged" />
+    </interface>
+
+    <script type="text/brightscript" uri="DetailScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/components/AppTheme.brs" />
+    <script type="text/brightscript" uri="pkg:/components/services/NavigateFunctions.brs" />
+
+    <children>
+        <poster id="poster" width="1280" height="720" />
+        <rectangle id="rectangle" translation="[40,70]" height="200" width="900" >
+            <label id="title" translation="[30,20]" />
+            <label id="description" translation="[30,50]" height="1000" width="900" wrap="true" />
+        </rectangle>
+    </children>
+</component>

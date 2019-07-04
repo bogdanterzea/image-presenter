@@ -1,17 +1,15 @@
-function init()
+sub init()
     m.ROW_INDEX = 0
     m.ROW_ITEM_INDEX = 1
-    m.top.setFocus(true)
-
-    m.top.backgroundURI = "pkg:/images/hexagones.jpg"
-    m.contentList = m.top.findNode("content_list")
     m.titleLabel = m.top.findNode("title_label")
     m.descriptionLabel = m.top.findNode("description_label")
+    m.contentList = m.top.findNode("content_list")
     m.contentList.observeField("rowItemFocused", "onRowItemFocused")
+    m.contentList.observeField("rowItemSelected", "onRowItemSelected")
 
     runGetComponentDataTask()
     setTheme()
-end function
+end sub
 
 sub runGetComponentDataTask()
     getComponentDataTask = CreateObject("roSGNode", "get_component_data_task")
@@ -19,17 +17,22 @@ sub runGetComponentDataTask()
     getComponentDataTask.control = "RUN"
 end sub
 
-sub onContentDataChanged(event as Object)
-    m.contentList.content = event.getData()
+sub onRowItemSelected(event as Object)
+    rowItemData = getRowItemData(event.getData())
+    navigate("DetailScreen", rowItemData)
 end sub
 
 sub onRowItemFocused(event as Object)
-    rowItemData = getFocusedRowItemData(event.getData())
+    rowItemData = getRowItemData(event.getData())
     m.titleLabel.text = rowItemData.title
     m.descriptionLabel.text = rowItemData.description
 end sub
 
-function getFocusedRowItemData(rowItemFocused as Object) as Object
+sub onContentDataChanged(event as Object)
+    m.contentList.content = event.getData()
+end sub
+
+function getRowItemData(rowItemFocused as Object) as Object
     focusedRow = rowItemFocused[m.ROW_INDEX]
     focusedRowItem = rowItemFocused[m.ROW_ITEM_INDEX]
 

@@ -2,7 +2,7 @@ sub main()
     m.port = CreateObject("roMessagePort")
     m.screen = CreateObject("roSGScreen")
     m.screen.setMessagePort(m.port)
-    scene = m.screen.CreateScene("home_scene")
+    scene = m.screen.CreateScene("AppScene")
     m.screen.Show()
     keepAppAlive()
 end sub

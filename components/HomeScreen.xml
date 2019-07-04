@@ -1,6 +1,7 @@
-<component name="home_scene" extends="Scene" initialFocus="content_list" >
-    <script type="text/brightscript" uri="home_scene.brs"/>
+<component name="HomeScreen" extends="Group" initialFocus="content_list" >
+    <script type="text/brightscript" uri="HomeScreen.brs" />
     <script type="text/brightscript" uri="AppTheme.brs" />
+    <script type="text/brightscript" uri="pkg:/components/services/NavigateFunctions.brs" />
     <children>
         <label id="title_label"
             height="60"
@@ -10,10 +11,10 @@
             translation="[150,130]"
             height="1000"
             width="900"
-            wrap="true"/>
+            wrap="true" />
         <rowList id="content_list"
             visible="true"
-            itemComponentName="row_item"
+            itemComponentName="RowItem"
             focusBitmapUri="pkg:/images/focus_indicator.9.png"
             translation="[150,360]"
             itemSize="[1020,300]"
