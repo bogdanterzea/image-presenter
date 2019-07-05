@@ -3,6 +3,8 @@ sub init()
     m.title = m.top.findNode("title")
     m.description = m.top.findNode("description")
     m.rectangle = m.top.findNode("rectangle")
+    m.ratingRectangle = m.top.findNode("rating_rectangle")
+    m.ratingText = m.top.findNode("rating_text")
 
     setTheme()
 end sub
@@ -19,6 +21,9 @@ sub setTheme()
     m.title.color = colors.main
     m.description.color = colors.main
     m.rectangle.color = colors.transparentBlack
+    m.ratingRectangle.color = colors.transparentBlack
+    m.ratingText.color = colors.main
+
 end sub
 
 function onKeyEvent(key, press) as Boolean
