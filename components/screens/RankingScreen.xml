@@ -1,0 +1,9 @@
+<component name="RankingScreen" extends="Group" >
+    <script type="text/brightscript" uri="RankingScreen.brs" />
+    <script type="text/brightscript" uri="AppTheme" />
+    <children>
+        <Rectangle id="rectangle" width="70" height="30" translation="[50,50]">
+            <label id="text" text="Grant rank:" translation="[10,10]" />
+        </Rectangle>
+    </children>
+</component>
