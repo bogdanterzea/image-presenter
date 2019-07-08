@@ -10,10 +10,10 @@ sub init()
 end sub
 
 sub onContentChanged(event as Object)
-    content = event.getData()
-    m.poster.uri = content.poster_url
-    m.title.text = content.title
-    m.description.text = content.description
+    m.content = event.getData()
+    m.poster.uri = m.content.poster_url
+    m.title.text = m.content.title
+    m.description.text = m.content.description
 end sub
 
 sub setTheme()
@@ -30,6 +30,10 @@ function onKeyEvent(key, press) as Boolean
     if press then
         if key = "back" then
             navigateBackTo("content_list")
+            return true
+        end if
+        if key = "options" then
+            navigate("RankingScreen", m.content)
             return true
         end if
     end if
