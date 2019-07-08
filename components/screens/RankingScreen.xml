@@ -1,4 +1,4 @@
-<component name="RankingScreen" extends="Group" >
+<component name="RankingScreen" extends="Group" initialFocus="rank_list">
     <interface>
         <field id="content" type="node" onChange="onContentChanged" />
     </interface>
@@ -8,7 +8,16 @@
 
     <children>
         <rectangle id="rectangle" width="1280" height="720">
-            <label id="text" text="Grant rank:" translation="[500,300]" />
+            <label id="text" text="Grant rank:" translation="[550,200]" />
+            <RadioButtonList id="rank_list" translation="[460,240]" itemSize="[400,80]">
+                <ContentNode id="ranks" role="content">
+                    <rank_item title="1" />
+                    <rank_item title="2" />
+                    <rank_item title="3" />
+                    <rank_item title="4" />
+                    <rank_item title="5" />
+                </ContentNode>
+            </RadioButtonList>
         </rectangle>
     </children>
 </component>
