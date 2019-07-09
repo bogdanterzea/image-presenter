@@ -16,16 +16,15 @@ sub onContentChanged(event as Object)
     m.poster.uri = m.content.poster_url
     m.title.text = m.content.title
     m.description.text = m.content.description
-    bogdanContent = CreateObject("roRegistrySection", "bogdanContent")
+    registrySectionContent = CreateObject("roRegistrySection", "registrySectionContent")
 
-    regContent = parseJson(bogdanContent.Read("registry"))
+    registryArray = parseJson(registrySectionContent.Read("registry"))
 
-    for each item in regContent
+    for each item in registryArray
         if item.id.ToStr() = m.content.index.ToStr() then
-            m.currentRankText.text = "Current rank: "+ item.rank
+            m.currentRankText.text = "Current rank: "+ item.rank.ToStr()
         end if
     end for
-
 
 end sub
 
@@ -38,7 +37,6 @@ sub setTheme()
     m.ratingText.color = colors.main
     m.currentRankText.color = colors.main
     m.currentRankRectangle.color = colors.transparentBlack
-
 end sub
 
 function onKeyEvent(key, press) as Boolean
@@ -52,5 +50,6 @@ function onKeyEvent(key, press) as Boolean
             return true
         end if
     end if
+
     return false
 end function

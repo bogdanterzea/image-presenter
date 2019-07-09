@@ -14,10 +14,10 @@ sub onRankSelected(obj)
     rank = obj.getData()
     rank += 1
     itExist = 0
-    bogdanContent = CreateObject("roRegistrySection", "bogdanContent")
-    bogdanArray = parseJson(bogdanContent.Read("registry"))
+    registrySectionContent = CreateObject("roRegistrySection", "registrySectionContent")
+    registryArray = parseJson(registrySectionContent.Read("registry"))
 
-    for each item in bogdanArray
+    for each item in registryArray
         if m.content.index.ToStr() = item.id.ToStr()
             item.rank = rank.ToStr()
             itExist = 1
@@ -25,12 +25,11 @@ sub onRankSelected(obj)
     end for
 
     if itExist = 0
-        ? bogdanArray
-        bogdanArray.Push({"id" : m.content.index.ToStr(), "rank": rank.ToStr()})
+        registryArray.Push({"id" : m.content.index.ToStr(), "rank": rank.ToStr()})
     end if
 
-    bogdanContent.Write("registry", formatJSON(bogdanArray))
-    bogdanContent.Flush()
+    registrySectionContent.Write("registry", formatJSON(registryArray))
+    registrySectionContent.Flush()
     navigateBackTo("poster")
 end sub
 
