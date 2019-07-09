@@ -16,5 +16,8 @@
         <rectangle id="rating_rectangle" width="280" height="44" translation="[800,500]" >
             <label id="rating_text" text="Press * to add a grade" translation="[10,10]" />
         </rectangle>
+        <rectangle id="current_rank_rectangle" width="200" height="40" translation="[500,600]" >
+            <Label id="current_rank_text" translation="[10,10]" />
+        </rectangle>
     </children>
 </component>

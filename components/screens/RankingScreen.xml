@@ -6,6 +6,7 @@
 
     <script type="text/brightscript" uri="RankingScreen.brs" />
     <script type="text/brightscript" uri="pkg:/components/AppTheme.brs" />
+    <script type="text/brightscript" uri="pkg:/components/services/NavigateFunctions.brs" />
 
     <children>
         <rectangle id="rectangle" width="1280" height="720">

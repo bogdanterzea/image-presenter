@@ -7,20 +7,31 @@ sub init()
 end sub
 
 sub onContentChanged(event as Object)
-    content = event.getData()
+    m.content = event.getData()
 end sub
 
 sub onRankSelected(obj)
     rank = obj.getData()
+    rank += 1
+    itExist = 0
     bogdanContent = CreateObject("roRegistrySection", "bogdanContent")
-    bogdanArray = [
-        { id: 0, rank: "1" },
-        { id: 1, rank: "2" },
-        { id: 2, rank: "5" },
-        { id: 3, rank: "4" }
-    ]
+    bogdanArray = parseJson(bogdanContent.Read("registry"))
+
+    for each item in bogdanArray
+        if m.content.index.ToStr() = item.id.ToStr()
+            item.rank = rank.ToStr()
+            itExist = 1
+        end if
+    end for
+
+    if itExist = 0
+        ? bogdanArray
+        bogdanArray.Push({"id" : m.content.index.ToStr(), "rank": rank.ToStr()})
+    end if
+
     bogdanContent.Write("registry", formatJSON(bogdanArray))
     bogdanContent.Flush()
+    navigateBackTo("poster")
 end sub
 
 sub setTheme()

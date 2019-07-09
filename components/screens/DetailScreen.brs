@@ -6,6 +6,7 @@ sub init()
     m.ratingRectangle = m.top.findNode("rating_rectangle")
     m.ratingText = m.top.findNode("rating_text")
     m.currentRankText = m.top.findNode("current_rank_text")
+    m.currentRankRectangle = m.top.findNode("current_rank_rectangle")
 
     setTheme()
 end sub
@@ -20,8 +21,8 @@ sub onContentChanged(event as Object)
     regContent = parseJson(bogdanContent.Read("registry"))
 
     for each item in regContent
-        if item.id = m.content.index.ToStr() then
-            ? item.rank
+        if item.id.ToStr() = m.content.index.ToStr() then
+            m.currentRankText.text = "Current rank: "+ item.rank
         end if
     end for
 
@@ -35,6 +36,8 @@ sub setTheme()
     m.rectangle.color = colors.transparentBlack
     m.ratingRectangle.color = colors.transparentBlack
     m.ratingText.color = colors.main
+    m.currentRankText.color = colors.main
+    m.currentRankRectangle.color = colors.transparentBlack
 
 end sub
 
