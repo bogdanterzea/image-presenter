@@ -5,6 +5,7 @@ sub init()
     m.rectangle = m.top.findNode("rectangle")
     m.ratingRectangle = m.top.findNode("rating_rectangle")
     m.ratingText = m.top.findNode("rating_text")
+    m.currentRankText = m.top.findNode("current_rank_text")
 
     setTheme()
 end sub
@@ -14,6 +15,17 @@ sub onContentChanged(event as Object)
     m.poster.uri = m.content.poster_url
     m.title.text = m.content.title
     m.description.text = m.content.description
+    bogdanContent = CreateObject("roRegistrySection", "bogdanContent")
+
+    regContent = parseJson(bogdanContent.Read("registry"))
+
+    for each item in regContent
+        if item.id = m.content.index.ToStr() then
+            ? item.rank
+        end if
+    end for
+
+
 end sub
 
 sub setTheme()

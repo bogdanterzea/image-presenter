@@ -13,10 +13,14 @@ end sub
 sub onRankSelected(obj)
     rank = obj.getData()
     bogdanContent = CreateObject("roRegistrySection", "bogdanContent")
-    rank++
-    bogdanContent.Write("rank" , rank.ToStr())
+    bogdanArray = [
+        { id: 0, rank: "1" },
+        { id: 1, rank: "2" },
+        { id: 2, rank: "5" },
+        { id: 3, rank: "4" }
+    ]
+    bogdanContent.Write("registry", formatJSON(bogdanArray))
     bogdanContent.Flush()
-    ? bogdanContent.Read("rank")
 end sub
 
 sub setTheme()
