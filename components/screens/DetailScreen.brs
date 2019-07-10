@@ -18,11 +18,10 @@ sub onContentChanged(event as Object)
     m.description.text = m.content.description
     registrySectionContent = CreateObject("roRegistrySection", "registrySectionContent")
 
-    registryArray = parseJson(registrySectionContent.Read("registry"))
-
-    for each item in registryArray
-        if item.id.ToStr() = m.content.index.ToStr() then
-            m.currentRankText.text = "Current rank: "+ item.rank.ToStr()
+    registryAssocArray = parseJson(registrySectionContent.Read("registry"))
+    for each item in registryAssocArray
+        if item = m.content.index.ToStr() then
+            m.currentRankText.text = "Current rank: "+ registryAssocArray[item].rank.ToStr()
         end if
     end for
 

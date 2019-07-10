@@ -13,22 +13,16 @@ end sub
 sub onRankSelected(obj)
     rank = obj.getData()
     rank += 1
-    itExist = 0
     registrySectionContent = CreateObject("roRegistrySection", "registrySectionContent")
-    registryArray = parseJson(registrySectionContent.Read("registry"))
 
-    for each item in registryArray
-        if m.content.index.ToStr() = item.id.ToStr()
-            item.rank = rank.ToStr()
-            itExist = 1
-        end if
-    end for
-
-    if itExist = 0
-        registryArray.Push({"id" : m.content.index.ToStr(), "rank": rank.ToStr()})
+    if registrySectionContent.Exists("registry")
+        registryAssocArray = parseJson(registrySectionContent.Read("registry"))
+    else
+        registryAssocArray = CreateObject("roAssociativeArray")
     end if
+    registryAssocArray[m.content.index.ToStr()]={"rank": rank.ToStr()}
 
-    registrySectionContent.Write("registry", formatJSON(registryArray))
+    registrySectionContent.Write("registry", formatJSON(registryAssocArray))
     registrySectionContent.Flush()
     navigateBackTo("poster")
 end sub
