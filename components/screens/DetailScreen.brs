@@ -1,12 +1,12 @@
 sub init()
-    m.poster = m.top.findNode("poster")
+    m.backgroundPoster = m.top.findNode("background_poster")
     m.title = m.top.findNode("title")
     m.description = m.top.findNode("description")
-    m.rectangle = m.top.findNode("rectangle")
-    m.ratingRectangle = m.top.findNode("rating_rectangle")
-    m.ratingText = m.top.findNode("rating_text")
-    m.currentRankText = m.top.findNode("current_rank_text")
-    m.currentRankRectangle = m.top.findNode("current_rank_rectangle")
+    m.detailsRectangle = m.top.findNode("details_rectangle")
+    m.rankingInstructionsRectangle = m.top.findNode("instruction_rectangle")
+    m.rankingInstructionsText = m.top.findNode("instruction_text")
+    m.rankDisplayText = m.top.findNode("rank_display_text")
+    m.rankDisplayRectangle = m.top.findNode("rank_display_rectangle")
 
     setTheme()
 end sub
@@ -23,13 +23,13 @@ sub initializeRegistry(content as Object)
     registryAssocArray = parseJson(registrySectionContent.Read("registry"))
     for each item in registryAssocArray
         if item = content.index.ToStr() then
-            m.currentRankText.text = "Current rank: "+ registryAssocArray[item].rank.ToStr()
+            m.rankDisplayText.text = "Current rank: "+ registryAssocArray[item].rank.ToStr()
         end if
     end for
 end sub
 
 sub initializeVisualElements(content as Object)
-    m.poster.uri = content.poster_url
+    m.backgroundPoster.uri = content.poster_url
     m.title.text = content.title
     m.description.text = content.description
 end sub
@@ -38,11 +38,11 @@ sub setTheme()
     colors = getAppColors()
     m.title.color = colors.main
     m.description.color = colors.main
-    m.rectangle.color = colors.transparentBlack
-    m.ratingRectangle.color = colors.transparentBlack
-    m.ratingText.color = colors.main
-    m.currentRankText.color = colors.main
-    m.currentRankRectangle.color = colors.transparentBlack
+    m.detailsRectangle.color = colors.transparentBlack
+    m.rankingInstructionsRectangle.color = colors.transparentBlack
+    m.rankingInstructionsText.color = colors.main
+    m.rankDisplayText.color = colors.main
+    m.rankDisplayRectangle.color = colors.transparentBlack
 end sub
 
 function onKeyEvent(key, press) as Boolean
