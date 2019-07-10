@@ -13,6 +13,10 @@ end sub
 sub onRankSelected(obj)
     rank = obj.getData()
     rank += 1
+    saveSelectedRank(rank.ToStr())
+end sub
+
+sub saveSelectedRank(rank as String)
     registrySectionContent = CreateObject("roRegistrySection", "registrySectionContent")
 
     if registrySectionContent.Exists("registry")
@@ -20,7 +24,7 @@ sub onRankSelected(obj)
     else
         registryAssocArray = CreateObject("roAssociativeArray")
     end if
-    registryAssocArray[m.content.index.ToStr()]={"rank": rank.ToStr()}
+    registryAssocArray[m.content.index.ToStr()]={"rank": rank}
 
     registrySectionContent.Write("registry", formatJSON(registryAssocArray))
     registrySectionContent.Flush()
