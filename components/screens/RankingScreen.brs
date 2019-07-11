@@ -20,32 +20,42 @@ end sub
 
 
 sub createRanksNode() as Object
-
     RanksContentNode = CreateObject("roSGNode", "contentNode")
     for rank = 1 to 5
-        rankItem = CreateObject("roSGNode", "rank_item")
-        rankItem.title = rank.ToStr()
-        rankItem.rank = rank.ToStr()
+        rankItem = createRankItem(rank)
         ranksContentNode.appendChild(rankItem)
     end for
 
 return ranksContentNode
 end sub
 
-sub saveSelectedRank(rank as String)
-    registrySectionContent = CreateObject("roRegistrySection", "registrySectionContent")
+function createRankItem(rank)
+    rankItem = CreateObject("roSGNode", "rank_item")
+    rankItem.title = rank.ToStr()
+    rankItem.rank = rank.ToStr()
 
-    if registrySectionContent.Exists("registry")
-        registryAssocArray = parseJson(registrySectionContent.Read("registry"))
+    return rankItem
+end function
+
+sub saveSelectedRank(rank as String)
+    m.registrySectionContent = CreateObject("roRegistrySection", "registrySectionContent")
+    registryAssocArray = createRegistryArray(rank)
+    m.registrySectionContent.Write("registry", formatJSON(registryAssocArray))
+    m.registrySectionContent.Flush()
+
+    navigateBackTo("background_poster")
+end sub
+
+function createRegistryArray(rank)
+    if m.registrySectionContent.Exists("registry")
+        registryAssocArray = parseJson(m.registrySectionContent.Read("registry"))
     else
         registryAssocArray = CreateObject("roAssociativeArray")
     end if
     registryAssocArray[m.content.index.ToStr()]={"rank": rank}
 
-    registrySectionContent.Write("registry", formatJSON(registryAssocArray))
-    registrySectionContent.Flush()
-    navigateBackTo("background_poster")
-end sub
+    return registryAssocArray
+end function
 
 sub setTheme()
     colors = getAppColors()
