@@ -3,8 +3,8 @@ sub init()
     m.title = m.top.findNode("title")
     m.description = m.top.findNode("description")
     m.detailsRectangle = m.top.findNode("details_rectangle")
-    m.rankingInstructionsRectangle = m.top.findNode("instruction_rectangle")
-    m.rankingInstructionsText = m.top.findNode("instruction_text")
+    m.rankingInstructionsRectangle = m.top.findNode("instructions_rectangle")
+    m.rankingInstructionsText = m.top.findNode("instructions_text")
     m.rankDisplayText = m.top.findNode("rank_display_text")
     m.rankDisplayRectangle = m.top.findNode("rank_display_rectangle")
 
@@ -13,7 +13,7 @@ end sub
 
 sub onContentChanged(event as Object)
     m.content = event.getData()
-    initializeVisualElements(m.content)
+    initializeVisualElements(m.content) 'populate!!!!!!!!!!!!!!!'
     initializeRegistry(m.content)
 end sub
 
@@ -23,6 +23,8 @@ sub initializeRegistry(content as Object)
     registryAssocArray = parseJson(registrySectionContent.Read("registry"))
     for each item in registryAssocArray
         if item = content.index.ToStr() then
+            ? type(item), item, "item si tipul lui ...."
+            ? type(content.inxed), content.index, "content.index si tipu lui.."
             m.rankDisplayText.text = "Current rank: "+ registryAssocArray[item].rank.ToStr()
         end if
     end for

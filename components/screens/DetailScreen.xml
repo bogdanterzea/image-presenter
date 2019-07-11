@@ -13,8 +13,8 @@
             <label id="title" translation="[30,20]" />
             <label id="description" translation="[30,50]" height="1000" width="900" wrap="true" />
         </rectangle>
-        <rectangle id="instruction_rectangle" width="280" height="44" translation="[800,500]" >
-            <label id="instruction_text" text="Press * to add a grade" translation="[10,10]" />
+        <rectangle id="instructions_rectangle" width="280" height="44" translation="[800,500]" >
+            <label id="instructions_text" text="Press * to add a grade" translation="[10,10]" />
         </rectangle>
         <rectangle id="rank_display_rectangle" width="200" height="40" translation="[500,600]" >
             <label id="rank_display_text" translation="[10,10]" />

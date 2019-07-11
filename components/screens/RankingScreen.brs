@@ -12,8 +12,8 @@ sub onContentChanged(event as Object)
     m.content = event.getData()
 end sub
 
-sub onRankSelected(obj)
-    rank = obj.getData()
+sub onRankSelected(rankSelected)
+    rank = rankSelected.getData()
     rank += 1
     saveSelectedRank(rank.ToStr())
 end sub
