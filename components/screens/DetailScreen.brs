@@ -13,7 +13,7 @@ end sub
 
 sub onContentChanged(event as Object)
     m.content = event.getData()
-    initializeVisualElements(m.content) 'populate!!!!!!!!!!!!!!!'
+    populateVisualElements(m.content) 'populate!!!!!!!!!!!!!!!'
     initializeRegistry(m.content)
 end sub
 
@@ -28,7 +28,7 @@ sub initializeRegistry(content as Object)
     end for
 end sub
 
-sub initializeVisualElements(content as Object)
+sub populateVisualElements(content as Object)
     m.backgroundPoster.uri = content.poster_url
     m.title.text = content.title
     m.description.text = content.description
