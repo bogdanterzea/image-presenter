@@ -42,17 +42,13 @@ sub saveSelectedRank(rank as String)
     registryAssocArray = createRegistryArray(rank)
     m.registrySectionContent.Write("registry", formatJSON(registryAssocArray))
     m.registrySectionContent.Flush()
-
+    
     navigateBackTo("background_poster")
 end sub
 
-function createRegistryArray(rank)
-    if m.registrySectionContent.Exists("registry")
-        registryAssocArray = parseJson(m.registrySectionContent.Read("registry"))
-    else
-        registryAssocArray = CreateObject("roAssociativeArray")
-    end if
-    registryAssocArray[m.content.index.ToStr()]={"rank": rank}
+function createRegistryArray(rankAcorded)
+    registryAssocArray = parseJson(m.registrySectionContent.Read("registry"))
+    registryAssocArray[m.content.index.ToStr()]={"rank": rankAcorded}
 
     return registryAssocArray
 end function

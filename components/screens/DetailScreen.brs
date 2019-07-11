@@ -23,8 +23,6 @@ sub initializeRegistry(content as Object)
     registryAssocArray = parseJson(registrySectionContent.Read("registry"))
     for each item in registryAssocArray
         if item = content.index.ToStr() then
-            ? type(item), item, "item si tipul lui ...."
-            ? type(content.inxed), content.index, "content.index si tipu lui.."
             m.rankDisplayText.text = "Current rank: "+ registryAssocArray[item].rank.ToStr()
         end if
     end for
