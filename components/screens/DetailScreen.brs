@@ -13,7 +13,7 @@ end sub
 
 sub onContentChanged(event as Object)
     m.content = event.getData()
-    populateVisualElements(m.content) 'populate!!!!!!!!!!!!!!!'
+    populateVisualElements(m.content)
     initializeRegistry(m.content)
 end sub
 
