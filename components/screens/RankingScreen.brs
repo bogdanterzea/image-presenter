@@ -29,7 +29,7 @@ sub createRanksNode() as Object
 return ranksContentNode
 end sub
 
-function createRankItem(rank)
+function createRankItem(rank as Integer)
     rankItem = CreateObject("roSGNode", "rank_item")
     rankItem.title = rank.ToStr()
     rankItem.rank = rank.ToStr()
@@ -39,14 +39,13 @@ end function
 
 sub saveSelectedRank(rank as String)
     m.registrySectionContent = CreateObject("roRegistrySection", "registrySectionContent")
-    registryAssocArray = createRegistryArray(rank)
-    m.registrySectionContent.Write("registry", formatJSON(registryAssocArray))
+    m.registrySectionContent.Write("registry", formatJSON(createRegistryArray(rank)))
     m.registrySectionContent.Flush()
-    
+
     navigateBackTo("background_poster")
 end sub
 
-function createRegistryArray(rankAcorded)
+function createRegistryArray(rankAcorded as String) as Object
     registryAssocArray = parseJson(m.registrySectionContent.Read("registry"))
     registryAssocArray[m.content.index.ToStr()]={"rank": rankAcorded}
 
