@@ -42,7 +42,7 @@ sub saveSelectedRank(rank as String)
     m.registrySectionContent.Write("registry", formatJSON(createRegistryArray(rank)))
     m.registrySectionContent.Flush()
 
-    navigateBackTo("background_poster")
+    navigateBackTo("rank_display_text")
 end sub
 
 function createRegistryArray(rankAcorded as String) as Object

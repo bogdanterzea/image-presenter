@@ -7,11 +7,7 @@ end sub
 
 sub navigateBackTo(nodeId as String)
     parent = m.top.getParent()
+    content = m.top.content
     parent.removeChild(m.top)
-    if parent.id = nodeId
-        parent.setFocus(true)
-    else
-        node = parent.findNode(nodeId)
-        node.setFocus(true)
-    end if
+    parent.findNode(nodeId).setFocus(true)
 end sub
