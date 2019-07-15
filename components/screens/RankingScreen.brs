@@ -46,7 +46,11 @@ sub saveSelectedRank(rank as String)
 end sub
 
 function createRegistryArray(rankAcorded as String) as Object
-    registryAssocArray = parseJson(m.registrySectionContent.Read("registry"))
+    if m.registrySectionContent.Exists("registry")
+        registryAssocArray = parseJson(m.registrySectionContent.Read("registry"))
+    else
+        registryAssocArray = {}
+    end if
     registryAssocArray[m.content.index.ToStr()]={"rank": rankAcorded}
 
     return registryAssocArray
