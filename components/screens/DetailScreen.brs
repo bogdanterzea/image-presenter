@@ -13,25 +13,28 @@ end sub
 
 sub onContentChanged(event as Object)
     m.content = event.getData()
-    populateVisualElements(m.content)
     initializeRegistry(m.content)
+    populateVisualElements()
 end sub
 
 sub initializeRegistry(content as Object)
-    registrySectionContent = CreateObject("roRegistrySection", "registrySectionContent")
+    m.registrySectionContent = CreateObject("roRegistrySection", "registrySectionContent")
+    m.registryAssocArray = parseJson(m.registrySectionContent.Read("registry"))
+end sub
 
-    registryAssocArray = parseJson(registrySectionContent.Read("registry"))
-    for each item in registryAssocArray
-        if item = content.index.ToStr() then
-            m.rankDisplayText.text = "Current rank: "+ registryAssocArray[item].rank.ToStr()
+sub displayCurrentRank()
+    for each item in m.registryAssocArray
+        if item = m.content.index.ToStr() then
+            m.rankDisplayText.text = "Current rank: "+ m.registryAssocArray[item].rank.ToStr()
         end if
     end for
 end sub
 
-sub populateVisualElements(content as Object)
-    m.backgroundPoster.uri = content.poster_url
-    m.title.text = content.title
-    m.description.text = content.description
+sub populateVisualElements()
+    m.backgroundPoster.uri = m.content.poster_url
+    m.title.text = m.content.title
+    m.description.text = m.content.description
+    displayCurrentRank()
 end sub
 
 sub setTheme()
