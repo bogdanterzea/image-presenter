@@ -61,3 +61,14 @@ sub setTheme()
     m.rectangle.color = colors.transparentBlack
     m.text.color = colors.main
 end sub
+
+function onKeyEvent(key, press) as Boolean
+    handled = false     
+    if press then
+        if key = "back" then
+            navigateBackTo("background_poster")
+            handled = true
+        end if
+    end if
+    return handled
+end function
