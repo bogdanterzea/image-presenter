@@ -1,12 +1,12 @@
 sub init()
-    m.backgroundPoster = m.top.findNode("background_poster")
     m.title = m.top.findNode("title")
     m.description = m.top.findNode("description")
-    m.detailsRectangle = m.top.findNode("details_rectangle")
-    m.rankingInstructionsRectangle = m.top.findNode("instructions_rectangle")
-    m.rankingInstructionsText = m.top.findNode("instructions_text")
     m.rankDisplayText = m.top.findNode("rank_display_text")
+    m.detailsRectangle = m.top.findNode("details_rectangle")
+    m.backgroundPoster = m.top.findNode("background_poster")
+    m.rankingInstructionsText = m.top.findNode("instructions_text")
     m.rankDisplayRectangle = m.top.findNode("rank_display_rectangle")
+    m.rankingInstructionsRectangle = m.top.findNode("instructions_rectangle")
 
     setTheme()
 end sub
