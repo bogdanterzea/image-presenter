@@ -49,16 +49,17 @@ sub setTheme()
 end sub
 
 function onKeyEvent(key, press) as Boolean
+    handled = false
     if press then
         if key = "back" then
             navigateBackTo("content_list")
-            return true
+            handled = true
         end if
         if key = "options" then
+        m.top.setFocus(false)
             navigate("RankingScreen", m.content)
-            return true
+            handled = true
         end if
     end if
-
-    return false
+    return handled
 end function
