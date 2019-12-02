@@ -3,7 +3,7 @@ sub init()
 end sub
 
 sub execute()
-    response = sendRequest("http://my-json-server.typicode.com/cazacutudor/typicode-json-server/photos")
+    response = sendRequest("http://my-json-server.typicode.com/bogdanterzea/json-server/photos")
     m.top.component_data = createContentNode(response)
 end sub
 
