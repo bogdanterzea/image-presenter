@@ -1,4 +1,4 @@
-<component name="RankingScreen" extends="Group" initialFocus="rank_list">
+<component name="RankingScreen" extends="Focusable" initialFocus="rank_list">
     <interface>
         <field id="content" type="node" onChange="onContentChanged" />
         <field id="rank_selected" type="assocarray" alias="rank_list.itemSelected" />

@@ -62,13 +62,7 @@ sub setTheme()
     m.text.color = colors.main
 end sub
 
-function onKeyEvent(key, press) as Boolean
-    handled = false     
-    if press then
-        if key = "back" then
-            navigateBackTo("background_poster")
-            handled = true
-        end if
-    end if
-    return handled
+function onKeyBack() as Boolean
+    navigateBackTo("background_poster")
+    return true
 end function

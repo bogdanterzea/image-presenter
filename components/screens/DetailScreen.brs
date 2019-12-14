@@ -48,18 +48,12 @@ sub setTheme()
     m.rankDisplayRectangle.color = colors.transparentBlack
 end sub
 
-function onKeyEvent(key, press) as Boolean
-    handled = false
-    if press then
-        if key = "back" then
-            navigateBackTo("content_list")
-            handled = true
-        end if
-        if key = "options" then
-        m.top.setFocus(false)
-            navigate("RankingScreen", m.content)
-            handled = true
-        end if
-    end if
-    return handled
+function onKeyOptions() as Boolean
+    navigate("RankingScreen", m.content)
+    return true
+end function
+
+function onKeyBack() as Boolean
+    navigateBackTo("content_list")
+    return true
 end function
