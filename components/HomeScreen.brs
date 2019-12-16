@@ -1,9 +1,11 @@
 sub init()
     m.ROW_INDEX = 0
     m.ROW_ITEM_INDEX = 1
+    m.container = m.top.findNode("container")
     m.titleLabel = m.top.findNode("title_label")
-    m.descriptionLabel = m.top.findNode("description_label")
     m.contentList = m.top.findNode("content_list")
+    m.descriptionLabel = m.top.findNode("description_label")
+
     m.contentList.observeField("rowItemFocused", "onRowItemFocused")
     m.contentList.observeField("rowItemSelected", "onRowItemSelected")
 
@@ -43,4 +45,5 @@ sub setTheme()
     colors = getAppColors()
     m.titleLabel.color = colors.main
     m.descriptionLabel.color = colors.main
+    m.container.color = colors.transparentBlack
 end sub
