@@ -6,6 +6,9 @@ sub init()
     m.contentList = m.top.findNode("content_list")
     m.descriptionLabel = m.top.findNode("description_label")
 
+    m.rankDisplayText = m.top.findNode("rank_display_text")
+    m.rankDisplayRectangle = m.top.findNode("rank_display_rectangle")
+
     m.contentList.observeField("rowItemFocused", "onRowItemFocused")
     m.contentList.observeField("rowItemSelected", "onRowItemSelected")
 
@@ -25,9 +28,27 @@ sub onRowItemSelected(event as Object)
 end sub
 
 sub onRowItemFocused(event as Object)
+    initializeRegistry(m.content)
     rowItemData = getRowItemData(event.getData())
     m.titleLabel.text = rowItemData.title
     m.descriptionLabel.text = rowItemData.description
+    displayCurrentRank(event.getData())
+end sub
+
+sub initializeRegistry(content as Object)
+    m.registrySectionContent = CreateObject("roRegistrySection", "registrySectionContent")
+    m.registryAssocArray = parseJson(m.registrySectionContent.Read("registry"))
+end sub
+
+sub displayCurrentRank(event as Object)
+    rowNumber = event[1] + 1
+    m.rankDisplayRectangle.visible = "false"
+    for each item in m.registryAssocArray
+        if item = rowNumber.ToStr()
+            m.rankDisplayText.text = "Current rank: "+ m.registryAssocArray[item].rank.ToStr()
+            m.rankDisplayRectangle.visible = "true"
+        end if
+    end for
 end sub
 
 sub onContentDataChanged(event as Object)
@@ -46,4 +67,6 @@ sub setTheme()
     m.titleLabel.color = colors.main
     m.descriptionLabel.color = colors.main
     m.container.color = colors.transparentBlack
+    m.rankDisplayText.color = colors.main
+    m.rankDisplayRectangle.color = colors.transparentBlack
 end sub

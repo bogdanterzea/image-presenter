@@ -18,5 +18,9 @@
             itemSpacing="[0,20]"
             rowLabelOffset="[[0,15]]"
             showRowLabel="[true]" />
+
+        <rectangle id="rank_display_rectangle" width="200" height="40" translation="[540,600]" >
+            <label id="rank_display_text" translation="[10,10]" />
+        </rectangle>
     </children>
 </component>
