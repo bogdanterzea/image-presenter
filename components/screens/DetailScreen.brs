@@ -31,7 +31,7 @@ sub displayCurrentRank()
 end sub
 
 sub populateVisualElements()
-    m.backgroundPoster.uri = m.content.poster_url
+    m.backgroundPoster.uri = m.content.largeImageUrl
     m.title.text = m.content.title
     m.description.text = m.content.description
     displayCurrentRank()
