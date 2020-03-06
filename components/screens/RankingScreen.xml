@@ -10,7 +10,7 @@
 
     <children>
         <rectangle id="rectangle" width="1280" height="720">
-            <label id="text" text="Grant rank:" translation="[550,200]" />
+            <label id="text" text="Let's rate it:" translation="[550,200]" />
             <radioButtonList id="rank_list" translation="[460,240]" itemSize="[400,80]" />
         </rectangle>
     </children>

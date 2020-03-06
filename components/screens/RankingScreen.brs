@@ -59,7 +59,6 @@ end function
 sub setTheme()
     colors = getAppColors()
     m.rectangle.color = colors.transparentBlack
-    m.text.color = colors.main
 end sub
 
 function onKeyBack() as Boolean

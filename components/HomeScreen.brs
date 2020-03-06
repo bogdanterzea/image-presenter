@@ -64,9 +64,6 @@ end function
 
 sub setTheme()
     colors = getAppColors()
-    m.titleLabel.color = colors.main
-    m.descriptionLabel.color = colors.main
     m.container.color = colors.transparentBlack
-    m.rankDisplayText.color = colors.main
     m.rankDisplayRectangle.color = colors.transparentBlack
 end sub

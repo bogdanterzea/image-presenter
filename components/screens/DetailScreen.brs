@@ -21,8 +21,6 @@ end sub
 
 sub setTheme()
     colors = getAppColors()
-    m.title.color = colors.main
-    m.description.color = colors.main
     m.detailsRectangle.color = colors.transparentBlack
 end sub
 
@@ -39,7 +37,7 @@ end function
 function onKeyOk() as Boolean
     m.detailsRectangle.visible = not m.detailsRectangle.visible
     if m.detailsRectangle.visible
-        m.rankingInstructionsText.text = "Press * to add a grade"
+        m.rankingInstructionsText.text = "Press * to add rating"
     else
         m.rankingInstructionsText.text = "Press OK for details"
     end if
