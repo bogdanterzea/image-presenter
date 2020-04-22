@@ -25,6 +25,7 @@ sub setTheme()
 end sub
 
 function onKeyOptions() as Boolean
+    onKeyOk()
     navigate("RankingScreen", m.content)
     return true
 end function
@@ -36,6 +37,10 @@ end function
 
 function onKeyOk() as Boolean
     m.detailsRectangle.visible = not m.detailsRectangle.visible
+    changeInstructionsText()
+end function
+
+function changeInstructionsText()
     if m.detailsRectangle.visible
         m.rankingInstructionsText.text = "Press * to add rating"
     else
