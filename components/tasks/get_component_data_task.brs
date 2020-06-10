@@ -3,7 +3,7 @@ sub init()
 end sub
 
 sub execute()
-    response = sendRequest("http://my-json-server.typicode.com/cazacutudor/typicode-json-server/photos")
+    response = sendRequest("http://my-json-server.typicode.com/bogdanterzea/json-server/photos")
     m.top.component_data = createContentNode(response)
 end sub
 
@@ -39,8 +39,9 @@ function createRowItemContentNode(itemData as Object) as Object
     rowItemContentNode = CreateObject("roSGNode", "row_item_content_node")
     rowItemContentNode.index = itemData.id
     rowItemContentNode.title = itemData.title
-    rowItemContentNode.poster_url = itemData.url
+    rowItemContentNode.posterUrl = itemData.url
     rowItemContentNode.description = itemData.description
+    rowItemContentNode.largeImageUrl = itemData.image_1080_url
 
     return rowItemContentNode
 end function

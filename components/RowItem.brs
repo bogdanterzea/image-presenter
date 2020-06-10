@@ -15,5 +15,5 @@ end sub
 sub itemContentChanged(event as Object)
     itemData = event.getData()
     m.itemIndex.text = itemData.index
-    m.poster.uri = itemData.poster_url
+    m.poster.uri = itemData.posterUrl
 end sub

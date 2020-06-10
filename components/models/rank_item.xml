@@ -1,0 +1,5 @@
+<component name="rank_item" extends="ContentNode" >
+    <interface>
+        <field id="rank" type="string" />
+    </interface>
+</component>

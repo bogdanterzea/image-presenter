@@ -3,15 +3,10 @@
     <script type="text/brightscript" uri="AppTheme.brs" />
     <script type="text/brightscript" uri="pkg:/components/services/NavigateFunctions.brs" />
     <children>
-        <label id="title_label"
-            height="60"
-            width="440"
-            translation="[470,50]" />
-        <label id="description_label"
-            translation="[150,130]"
-            height="1000"
-            width="900"
-            wrap="true" />
+        <rectangle id="container" width="1000" height="280" translation="[150,60]">
+            <label id="title_label" translation="[20,30]" />
+            <label id="description_label" translation="[20,100]" height="1000" width="900" wrap="true" />
+        </rectangle>
         <rowList id="content_list"
             visible="true"
             itemComponentName="RowItem"
@@ -23,5 +18,9 @@
             itemSpacing="[0,20]"
             rowLabelOffset="[[0,15]]"
             showRowLabel="[true]" />
+
+        <rectangle id="rank_display_rectangle" width="200" height="40" translation="[540,600]" >
+            <label id="rank_display_text" translation="[10,10]" />
+        </rectangle>
     </children>
 </component>

@@ -1,0 +1,17 @@
+<component name="RankingScreen" extends="Focusable" initialFocus="rank_list">
+    <interface>
+        <field id="content" type="node" onChange="onContentChanged" />
+        <field id="rank_selected" type="assocarray" alias="rank_list.itemSelected" />
+    </interface>
+
+    <script type="text/brightscript" uri="RankingScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/components/AppTheme.brs" />
+    <script type="text/brightscript" uri="pkg:/components/services/NavigateFunctions.brs" />
+
+    <children>
+        <rectangle id="rectangle" width="1280" height="720">
+            <label id="text" text="Grant rank:" translation="[550,200]" />
+            <radioButtonList id="rank_list" translation="[460,240]" itemSize="[400,80]" />
+        </rectangle>
+    </children>
+</component>

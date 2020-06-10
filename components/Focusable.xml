@@ -1,0 +1,7 @@
+<component name="Focusable" extends="Group">
+    <interface>
+        <field id="propagateFocus" type="boolean" value="true" onChange="onPropagateFocusChanged" />
+    </interface>
+
+    <script type="text/brightscript" uri="Focusable.brs" />
+</component>

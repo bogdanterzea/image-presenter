@@ -1,4 +1,4 @@
-<component name="DetailScreen" extends="Group" >
+<component name="DetailScreen" extends="Focusable" >
     <interface>
         <field id="content" type="node" onChange="onContentChanged" />
     </interface>
@@ -8,10 +8,14 @@
     <script type="text/brightscript" uri="pkg:/components/services/NavigateFunctions.brs" />
 
     <children>
-        <poster id="poster" width="1280" height="720" />
-        <rectangle id="rectangle" translation="[40,70]" height="200" width="900" >
+        <poster id="background_poster" width="1280" height="720" />
+        <rectangle id="details_rectangle" translation="[40,70]" height="200" width="930" >
             <label id="title" translation="[30,20]" />
             <label id="description" translation="[30,50]" height="1000" width="900" wrap="true" />
+        </rectangle>
+
+        <rectangle id="instructions_rectangle" width="280" height="44" translation="[800,500]" >
+            <label id="instructions_text" text="Press * to add a grade" translation="[10,10]" />
         </rectangle>
     </children>
 </component>
