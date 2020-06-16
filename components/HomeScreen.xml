@@ -3,24 +3,23 @@
     <script type="text/brightscript" uri="AppTheme.brs" />
     <script type="text/brightscript" uri="pkg:/components/services/NavigateFunctions.brs" />
     <children>
-        <rectangle id="container" width="1000" height="280" translation="[150,60]">
-            <label id="title_label" translation="[20,30]" />
-            <label id="description_label" translation="[20,100]" height="1000" width="900" wrap="true" />
-        </rectangle>
         <rowList id="content_list"
             visible="true"
             itemComponentName="RowItem"
             focusBitmapUri="pkg:/images/focus_indicator.9.png"
-            translation="[150,360]"
+            translation="[150,33]"
             itemSize="[1020,300]"
             rowItemSize="[ [250, 150] ]"
             rowItemSpacing="[ [5, 0] ]"
             itemSpacing="[0,20]"
             rowLabelOffset="[[0,15]]"
             showRowLabel="[true]" />
-
-        <rectangle id="rank_display_rectangle" width="200" height="40" translation="[540,600]" >
+        <rectangle id="rank_display_rectangle" width="200" height="40" translation="[540,270]" >
             <label id="rank_display_text" translation="[10,10]" />
+        </rectangle>
+        <rectangle id="container" width="1048" height="280" translation="[130,360]">
+            <label id="title_label" translation="[20,30]" />
+            <label id="description_label" translation="[20,100]" height="1000" width="900" wrap="true" />
         </rectangle>
     </children>
 </component>

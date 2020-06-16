@@ -4,7 +4,6 @@ sub init()
     m.detailsRectangle = m.top.findNode("details_rectangle")
     m.backgroundPoster = m.top.findNode("background_poster")
     m.rankingInstructionsText = m.top.findNode("instructions_text")
-    m.rankingInstructionsRectangle = m.top.findNode("instructions_rectangle")
 
     setTheme()
 end sub
@@ -22,14 +21,11 @@ end sub
 
 sub setTheme()
     colors = getAppColors()
-    m.title.color = colors.main
-    m.description.color = colors.main
     m.detailsRectangle.color = colors.transparentBlack
-    m.rankingInstructionsRectangle.color = colors.transparentBlack
-    m.rankingInstructionsText.color = colors.main
 end sub
 
 function onKeyOptions() as Boolean
+    onKeyOk()
     navigate("RankingScreen", m.content)
     return true
 end function
@@ -37,4 +33,17 @@ end function
 function onKeyBack() as Boolean
     navigateBackTo("content_list")
     return true
+end function
+
+function onKeyOk() as Boolean
+    m.detailsRectangle.visible = not m.detailsRectangle.visible
+    changeInstructionsText()
+end function
+
+function changeInstructionsText()
+    if m.detailsRectangle.visible
+        m.rankingInstructionsText.text = "Press * to add rating"
+    else
+        m.rankingInstructionsText.text = "Press OK for details"
+    end if
 end function

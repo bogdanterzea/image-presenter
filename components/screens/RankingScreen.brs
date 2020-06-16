@@ -59,10 +59,13 @@ end function
 sub setTheme()
     colors = getAppColors()
     m.rectangle.color = colors.transparentBlack
-    m.text.color = colors.main
 end sub
 
 function onKeyBack() as Boolean
     navigateBackTo("background_poster")
+    return true
+end function
+
+function onKeyOptions() as boolean
     return true
 end function

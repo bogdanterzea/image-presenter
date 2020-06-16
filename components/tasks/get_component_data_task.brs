@@ -25,7 +25,6 @@ end function
 
 function createRowContentNode(response as Object) as Object
     rowContentNode = CreateObject("roSGNode", "ContentNode")
-    rowContentNode.title = "PHOTOS"
 
     for each itemData in response
         rowItemContentNode = createRowItemContentNode(itemData)

@@ -9,13 +9,10 @@
 
     <children>
         <poster id="background_poster" width="1280" height="720" />
-        <rectangle id="details_rectangle" translation="[40,70]" height="200" width="930" >
+        <rectangle id="details_rectangle" translation="[0,520]" height="250" width="1280" visible="false">
             <label id="title" translation="[30,20]" />
-            <label id="description" translation="[30,50]" height="1000" width="900" wrap="true" />
+            <label id="description" translation="[30,60]" height="1000" width="1230" wrap="true" />
         </rectangle>
-
-        <rectangle id="instructions_rectangle" width="280" height="44" translation="[800,500]" >
-            <label id="instructions_text" text="Press * to add a grade" translation="[10,10]" />
-        </rectangle>
+        <label id="instructions_text" text="Press OK for details" translation="[506,690]" />
     </children>
 </component>
