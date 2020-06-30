@@ -2,4 +2,4 @@
 
 ## Roku application
 
-__Roku application wich will display images and let you interact with them__
+__Roku application which will display images and let you interact with them__
