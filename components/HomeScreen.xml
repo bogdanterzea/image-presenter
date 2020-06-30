@@ -1,4 +1,4 @@
-<component name="HomeScreen" extends="Group" initialFocus="content_list" >
+<component name="HomeScreen" extends="Group" initialFocus="content_list">
     <script type="text/brightscript" uri="HomeScreen.brs" />
     <script type="text/brightscript" uri="AppTheme.brs" />
     <script type="text/brightscript" uri="pkg:/components/services/NavigateFunctions.brs" />
@@ -14,7 +14,7 @@
             itemSpacing="[0,20]"
             rowLabelOffset="[[0,15]]"
             showRowLabel="[true]" />
-        <rectangle id="rank_display_rectangle" width="200" height="40" translation="[540,270]" >
+        <rectangle id="rank_display_rectangle" width="200" height="40" translation="[540,270]">
             <label id="rank_display_text" translation="[10,10]" />
         </rectangle>
         <rectangle id="container" width="1048" height="280" translation="[130,360]">

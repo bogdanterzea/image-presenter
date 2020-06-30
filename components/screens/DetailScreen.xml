@@ -1,4 +1,4 @@
-<component name="DetailScreen" extends="Focusable" >
+<component name="DetailScreen" extends="Focusable">
     <interface>
         <field id="content" type="node" onChange="onContentChanged" />
     </interface>
