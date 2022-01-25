@@ -14,7 +14,8 @@
             itemSpacing="[0,20]"
             rowLabelOffset="[[0,15]]"
             showRowLabel="[true]" />
-        <rectangle id="rank_display_rectangle" width="200" height="40" translation="[540,270]">
+        <button id="videoButton" text="PLAY A VIDEO" translation="[340,200]" minWidth="140" />
+        <rectangle id="rank_display_rectangle" width="200" height="40" translation="[540,270]" >
             <label id="rank_display_text" translation="[10,10]" />
         </rectangle>
         <rectangle id="container" width="1048" height="280" translation="[130,360]">
