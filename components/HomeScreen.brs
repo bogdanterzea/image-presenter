@@ -4,6 +4,7 @@ sub init()
     m.container = m.top.findNode("container")
     m.titleLabel = m.top.findNode("title_label")
     m.contentList = m.top.findNode("content_list")
+    m.actionButton = m.top.findNode("action_button")
     m.descriptionLabel = m.top.findNode("description_label")
 
     m.rankDisplayText = m.top.findNode("rank_display_text")
@@ -11,9 +12,14 @@ sub init()
 
     m.contentList.observeField("rowItemFocused", "onRowItemFocused")
     m.contentList.observeField("rowItemSelected", "onRowItemSelected")
+    m.actionButton.observeField("buttonSelected", "onActionButtonSelected")
 
     runGetComponentDataTask()
     setTheme()
+end sub
+
+sub onActionButtonSelected(event as Object)
+    ? "papagaal"
 end sub
 
 sub runGetComponentDataTask()
@@ -67,3 +73,15 @@ sub setTheme()
     m.container.color = colors.transparentBlack
     m.rankDisplayRectangle.color = colors.transparentBlack
 end sub
+
+function onKeyDown() as Boolean
+    if m.contentList.hasFocus() then m.actionButton.setFocus(true)
+
+    return true
+end function
+
+function onKeyUp() as Boolean
+    if m.actionButton.hasFocus() then m.contentList.setFocus(true)
+
+    return true
+end function
