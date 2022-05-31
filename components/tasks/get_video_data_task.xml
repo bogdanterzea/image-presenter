@@ -1,0 +1,6 @@
+<component name="get_video_data_task" extends="Task">
+    <script type="text/brightscript" uri="get_video_data_task.brs" />
+    <interface>
+        <field id="video_data" type="node" />
+    </interface>
+</component>

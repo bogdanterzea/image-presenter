@@ -19,13 +19,17 @@ sub init()
 end sub
 
 sub onActionButtonSelected(event as Object)
-    ? "papagaal"
+    navigate("VideoScreen", m.videoData)
 end sub
 
 sub runGetComponentDataTask()
     getComponentDataTask = CreateObject("roSGNode", "get_component_data_task")
     getComponentDataTask.observeField("component_data", "onContentDataChanged")
     getComponentDataTask.control = "RUN"
+
+    getVideoDataTask = CreateObject("roSgNode", "get_video_data_task")
+    getVideoDataTask.observeField("video_data","onVideoDataChanged")
+    getVideoDataTask.control = "RUN"
 end sub
 
 sub onRowItemSelected(event as Object)
@@ -59,6 +63,10 @@ end sub
 
 sub onContentDataChanged(event as Object)
     m.contentList.content = event.getData()
+end sub
+
+sub onVideoDataChanged(event as Object)
+    m.videoData = event.getData()
 end sub
 
 function getRowItemData(rowItemFocused as Object) as Object
