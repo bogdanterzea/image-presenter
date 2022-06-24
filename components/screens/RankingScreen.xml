@@ -5,7 +5,7 @@
     </interface>
 
     <script type="text/brightscript" uri="RankingScreen.brs" />
-    <script type="text/brightscript" uri="pkg:/components/AppTheme.brs" />
+    <script type="text/brightscript" uri="pkg:/components/AppTheme.bs" />
     <script type="text/brightscript" uri="pkg:/components/services/NavigateFunctions.brs" />
 
     <children>
