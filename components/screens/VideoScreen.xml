@@ -1,0 +1,11 @@
+<component name="VideoScreen" extends="Focusable" initialFocus="video">
+    <interface>
+        <field id="content" type="node" onChange="onContentChanged" />
+    </interface>
+
+    <script type="text/brightscript" uri="VideoScreen.brs" />
+
+    <children>
+        <video id="video" />
+    </children>
+</component>

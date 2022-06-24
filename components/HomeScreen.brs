@@ -4,6 +4,7 @@ sub init()
     m.container = m.top.findNode("container")
     m.titleLabel = m.top.findNode("title_label")
     m.contentList = m.top.findNode("content_list")
+    m.actionButton = m.top.findNode("action_button")
     m.descriptionLabel = m.top.findNode("description_label")
 
     m.rankDisplayText = m.top.findNode("rank_display_text")
@@ -11,15 +12,24 @@ sub init()
 
     m.contentList.observeField("rowItemFocused", "onRowItemFocused")
     m.contentList.observeField("rowItemSelected", "onRowItemSelected")
+    m.actionButton.observeField("buttonSelected", "onActionButtonSelected")
 
     runGetComponentDataTask()
     setTheme()
+end sub
+
+sub onActionButtonSelected(event as Object)
+    navigate("VideoScreen", m.videoData)
 end sub
 
 sub runGetComponentDataTask()
     getComponentDataTask = CreateObject("roSGNode", "get_component_data_task")
     getComponentDataTask.observeField("component_data", "onContentDataChanged")
     getComponentDataTask.control = "RUN"
+
+    getVideoDataTask = CreateObject("roSgNode", "get_video_data_task")
+    getVideoDataTask.observeField("video_data","onVideoDataChanged")
+    getVideoDataTask.control = "RUN"
 end sub
 
 sub onRowItemSelected(event as Object)
@@ -55,6 +65,10 @@ sub onContentDataChanged(event as Object)
     m.contentList.content = event.getData()
 end sub
 
+sub onVideoDataChanged(event as Object)
+    m.videoData = event.getData()
+end sub
+
 function getRowItemData(rowItemFocused as Object) as Object
     focusedRow = rowItemFocused[m.ROW_INDEX]
     focusedRowItem = rowItemFocused[m.ROW_ITEM_INDEX]
@@ -67,3 +81,15 @@ sub setTheme()
     m.container.color = colors.transparentBlack
     m.rankDisplayRectangle.color = colors.transparentBlack
 end sub
+
+function onKeyDown() as Boolean
+    if m.contentList.hasFocus() then m.actionButton.setFocus(true)
+
+    return true
+end function
+
+function onKeyUp() as Boolean
+    if m.actionButton.hasFocus() then m.contentList.setFocus(true)
+
+    return true
+end function

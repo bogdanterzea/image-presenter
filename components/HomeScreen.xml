@@ -1,4 +1,4 @@
-<component name="HomeScreen" extends="Group" initialFocus="content_list">
+<component name="HomeScreen" extends="Focusable" initialFocus="content_list" >
     <script type="text/brightscript" uri="HomeScreen.brs" />
     <script type="text/brightscript" uri="AppTheme.brs" />
     <script type="text/brightscript" uri="pkg:/components/services/NavigateFunctions.brs" />
@@ -14,10 +14,11 @@
             itemSpacing="[0,20]"
             rowLabelOffset="[[0,15]]"
             showRowLabel="[true]" />
-        <rectangle id="rank_display_rectangle" width="200" height="40" translation="[540,270]">
+        <button id="action_button" text="PLAY A VIDEO" translation="[510,250]" minWidth="120" showFocusFootprint="true"/>
+        <rectangle id="rank_display_rectangle" width="200" height="40" translation="[540,320]" >
             <label id="rank_display_text" translation="[10,10]" />
         </rectangle>
-        <rectangle id="container" width="1048" height="280" translation="[130,360]">
+        <rectangle id="container" width="1048" height="280" translation="[130,390]">
             <label id="title_label" translation="[20,30]" />
             <label id="description_label" translation="[20,100]" height="1000" width="900" wrap="true" />
         </rectangle>
