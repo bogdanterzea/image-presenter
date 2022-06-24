@@ -1,6 +1,5 @@
 <component name="HomeScreen" extends="Focusable" initialFocus="content_list" >
-    <script type="text/brightscript" uri="HomeScreen.brs" />
-    <script type="text/brightscript" uri="AppTheme.brs" />
+    <script type="text/brightscript" uri="HomeScreen.bs" />
     <script type="text/brightscript" uri="pkg:/components/services/NavigateFunctions.brs" />
     <children>
         <rowList id="content_list"

@@ -1,5 +1,5 @@
 <component name="AppScene" extends="Scene" initialFocus="HomeScreen">
-    <script type="text/brightscript" uri="AppScene.brs" />
+    <script type="text/brightscript" uri="AppScene.bs" />
     <children>
         <HomeScreen id="HomeScreen" />
     </children>

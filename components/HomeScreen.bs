@@ -1,3 +1,5 @@
+import "pkg:/components/AppTheme.bs"
+
 sub init()
     m.ROW_INDEX = 0
     m.ROW_ITEM_INDEX = 1
